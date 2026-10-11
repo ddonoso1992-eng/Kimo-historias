@@ -12,7 +12,7 @@ ROSA, AMAR, MENTA, LILA = "#f8c1cb", "#f8e399", "#8ad5c6", "#c7b8e2"
 CELESTE, CORAL, TURQ, AMAR2 = "#3eb8d5", "#fca8a7", "#62cccb", "#f9de7d"
 GRIS = "#5f6368"
 FD = "/usr/share/fonts/truetype/google-fonts/Poppins-"
-WHATS = "+593 96 368 0929"
+WHATS = "+593 98 325 1505"
 
 
 def f(w, s):
