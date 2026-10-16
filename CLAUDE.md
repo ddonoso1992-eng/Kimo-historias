@@ -23,6 +23,9 @@ Respaldo probado el 2026-10-13:
 No uses proxies de imágenes de terceros.
 
 ## Variedad de productos (pedido de Diego, 2026-10-16)
-Diego pidió no subir tanto peluche brainrot: hay más cosas que mostrar. Prioriza variedad (bisutería, accesorios,
-útiles/esferos, juegos de mesa, Lego, blind boxes, charms, etc.). Usa brainrot como máximo 1 de cada 4 historias,
-y nunca dos brainrot el mismo día. En domingo, "Peluches y juguetes" no obliga a usar brainrot.
+**PROHIBIDO peluches brainrot (handles "peluches-brainrot-...", Tung Tung, Lirili, Burlaloni, Chimpancini, Boneca Ambalabu,
+Capuccino Assassino, etc.) en todas las artes nuevas desde 2026-10-17 hasta 2026-10-31.** Se puede volver a usarlos desde
+2026-11-01, y entonces como máximo 1 de cada 4 historias y nunca dos el mismo día.
+Prioriza variedad: bisutería, accesorios, útiles/esferos, juegos de mesa, Lego, blind boxes, charms, otros peluches que
+no sean brainrot, etc. En domingo ("Peluches y juguetes") y lunes ("Novedades") busca alternativas que no sean brainrot.
+Excepción ya aprobada: las artes del 2026-10-19 (ya programadas) quedan como están.
