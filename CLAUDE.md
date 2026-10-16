@@ -21,3 +21,8 @@ Respaldo probado el 2026-10-13:
 3. Al terminar, manda las `tmp_foto_*` a la papelera con `mcp__Google_Drive__trash_file`.
 
 No uses proxies de imágenes de terceros.
+
+## Variedad de productos (pedido de Diego, 2026-10-16)
+Diego pidió no subir tanto peluche brainrot: hay más cosas que mostrar. Prioriza variedad (bisutería, accesorios,
+útiles/esferos, juegos de mesa, Lego, blind boxes, charms, etc.). Usa brainrot como máximo 1 de cada 4 historias,
+y nunca dos brainrot el mismo día. En domingo, "Peluches y juguetes" no obliga a usar brainrot.
