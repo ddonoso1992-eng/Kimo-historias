@@ -29,3 +29,6 @@ Capuccino Assassino, etc.) en todas las artes nuevas desde 2026-10-17 hasta 2026
 Prioriza variedad: bisutería, accesorios, útiles/esferos, juegos de mesa, Lego, blind boxes, charms, otros peluches que
 no sean brainrot, etc. En domingo ("Peluches y juguetes") y lunes ("Novedades") busca alternativas que no sean brainrot.
 Excepción ya aprobada: las artes del 2026-10-19 (ya programadas) quedan como están.
+
+## Más juguetes (pedido de Diego, 2026-10-20)
+Ahora hay más juguetes en Shopify: en las próximas artes, revisa el catálogo completo (ordena por fecha de creación, más recientes primero) y prioriza juguetes nuevos, no solo bisutería y papelería.
