@@ -39,6 +39,10 @@ jobs:
             echo "lista=$lista" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Instalar ffmpeg
+        if: steps.pedidos.outputs.lista != ''
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+
       - name: Generar video(s)
         if: steps.pedidos.outputs.lista != ''
         env:

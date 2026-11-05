@@ -5,7 +5,8 @@ Uso: python3 reels/higgsfield_reel.py reels/pedidos/<archivo>.json
 
 Pedido (JSON):
   imagen   -> foto dentro del repo (ej. fotos_ia/xxx_persona.jpg). Puede ir por clip.
-  clips    -> lista de clips; cada uno {"prompt": "...", "duracion": 5|10, "imagen": opcional}
+  clips    -> lista de clips; cada uno {"prompt": "...", "duracion": 5|10, "imagen": opcional,
+              "request_id": opcional -> reutiliza un clip ya generado sin volver a pagarlo}
               (o "prompt" + "duracion" sueltos para un solo clip)
   salida   -> nombre del video final sin extensión (ej. 2026-11-10_reel)
   textos   -> opcional, textos de venta encima del video (sin emojis; usa \n para 2 líneas):
@@ -128,7 +129,9 @@ def main():
     pedido = json.load(open(sys.argv[1], encoding="utf-8"))
     clips = pedido.get("clips") or [{"prompt": pedido["prompt"], "duracion": pedido.get("duracion", 5)}]
     # mandar todos los clips a la vez y luego esperarlos
-    ids = [enviar(c.get("imagen", pedido.get("imagen")), c["prompt"], c.get("duracion", 10)) for c in clips]
+    # si un clip ya trae request_id (ya pagado), solo se descarga; no se vuelve a generar
+    ids = [c.get("request_id") or enviar(c.get("imagen", pedido.get("imagen")), c["prompt"], c.get("duracion", 10))
+           for c in clips]
     archivos = []
     for i, rid in enumerate(ids):
         destino = f"/tmp/clip_{i}.mp4"
