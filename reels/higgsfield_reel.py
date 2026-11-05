@@ -11,7 +11,7 @@ Pedido (JSON):
   salida   -> nombre del video final sin extensión (ej. 2026-11-10_reel)
   textos   -> opcional, textos de venta encima del video (sin emojis; usa \n para 2 líneas):
               {"gancho": "...", "precio": "...", "cierre": "...", "whatsapp": "..."}
-  escena   -> opcional: crea primero la foto con OpenAI (gpt-image-1) a partir de la foto real
+  escena   -> opcional: crea primero la foto con OpenAI (gpt-image-1.5) a partir de la foto real
               del producto: {"foto_producto": "<URL de Shopify>", "prompt": "..."}
               La foto queda en fotos_ia/<salida>.png y se usa como "imagen".
   solo_imagen -> opcional true: solo crea la foto de la escena y termina (para revisar barato)
@@ -152,7 +152,7 @@ def crear_escena(escena, salida):
     r = subprocess.run(
         ["curl", "-sS", "https://api.openai.com/v1/images/edits",
          "-H", f"Authorization: Bearer {clave}",
-         "-F", "model=gpt-image-1", "-F", f"image[]=@{foto}",
+         "-F", "model=gpt-image-1.5", "-F", f"image[]=@{foto}",
          "-F", "prompt=" + escena["prompt"] + " Keep the product exactly identical to the reference photo "
                            "(same shape, colors and details). Photorealistic, vertical 2:3, no text, no logos.",
          "-F", "size=1024x1536", "-F", "quality=medium", "-F", "n=1"],
