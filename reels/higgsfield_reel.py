@@ -107,9 +107,11 @@ def armar(clips, salida, textos):
             filtros.append(f"drawtext=fontfile={f}:textfile={texto('g', textos['gancho'])}:fontsize=74:"
                            f"fontcolor=white:{caja}:x=(w-tw)/2:y=h*0.10:enable='between(t,0,3.5)'")
         if textos.get("precio"):
-            filtros.append(f"drawtext=fontfile={f}:textfile={texto('p', textos['precio'])}:fontsize=66:line_spacing=14:"
-                           f"fontcolor=0xFFE14D:{caja}:x=(w-tw)/2:y=h*0.66:"
-                           f"enable='between(t,3,{dur:.2f})'")
+            # una línea por renglón (algunas versiones de ffmpeg muestran el salto de línea como un cuadrito)
+            for j, linea in enumerate(textos["precio"].split("\n")):
+                filtros.append(f"drawtext=fontfile={f}:textfile={texto(f'p{j}', linea.strip())}:fontsize=66:"
+                               f"fontcolor=0xFFE14D:{caja}:x=(w-tw)/2:y=h*0.64+{j}*110:"
+                               f"enable='between(t,3,{dur:.2f})'")
         fin = max(dur - 4, 0)
         if textos.get("cierre"):
             filtros.append(f"drawtext=fontfile={f}:textfile={texto('c', textos['cierre'])}:fontsize=64:"

@@ -1,0 +1,22 @@
+{
+  "imagen": "fotos_ia/pulsera-italiana-plateada_persona.jpg",
+  "salida": "2026-11-04_prueba_pulsera_venta_v3",
+  "clips": [
+    {
+      "prompt": "Premium jewelry commercial. Fast cinematic push-in toward the silver Italian link bracelet on her wrist, she slowly rotates her wrist so bright light sparkles across the polished links, then she looks at the camera with a confident happy smile. Shallow depth of field, glossy beauty lighting, smooth camera motion, the bracelet keeps exactly the same design.",
+      "duracion": 10,
+      "request_id": "01a1a953-4a42-7a2e-8ebd-d09d105ff27d"
+    },
+    {
+      "prompt": "Energetic lifestyle ad. The woman brings her wrist close to the camera to proudly show off the silver Italian link bracelet, touches it with her other hand, laughs and tosses her hair, camera does a smooth slight orbit around her wrist with warm golden light flares. Realistic, high-end Instagram reel feel, the bracelet keeps exactly the same design.",
+      "duracion": 10,
+      "request_id": "01a1a953-4b4c-7453-9be1-8f4c293c3b28"
+    }
+  ],
+  "textos": {
+    "gancho": "Arma tu pulsera italiana",
+    "precio": "Pulsera $12\nCharms desde $6",
+    "cierre": "Envíos a todo Ecuador",
+    "whatsapp": "Pide por WhatsApp 098 325 1505"
+  }
+}
