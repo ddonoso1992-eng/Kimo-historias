@@ -1,0 +1,59 @@
+name: Prueba de voces (gratis)
+
+# Genera el reel de prueba con 3 voces en off distintas (Piper, código abierto, gratis)
+# para que Diego elija. Se corre a mano desde Actions o al cambiar este archivo.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/prueba-voz.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  voces:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Instalar ffmpeg y Piper
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          python3 -m pip install -q piper-tts==1.8.0
+
+      - name: Bajar voces en español
+        run: |
+          mkdir -p /tmp/voces && cd /tmp/voces
+          base=https://huggingface.co/rhasspy/piper-voices/resolve/main/es
+          for v in es_MX/claude/high/es_MX-claude-high es_MX/ald/medium/es_MX-ald-medium es_AR/daniela/high/es_AR-daniela-high; do
+            curl -sSL -O "$base/$v.onnx"
+            curl -sSL -O "$base/$v.onnx.json"
+          done
+          ls -la
+
+      - name: Generar voces y mezclar con el reel
+        run: |
+          mkdir -p reels/pruebas_voz
+          texto="¿Ya tienes tu pulsera italiana? Ármala a tu estilo con charms desde seis dólares. La pulsera completa, solo doce. Envíos a todo Ecuador. ¡Escríbenos por WhatsApp!"
+          reel=reels/2026-11-04_prueba_pulsera_venta_v3.mp4
+          for v in es_MX-claude-high es_MX-ald-medium es_AR-daniela-high; do
+            echo "$texto" | python3 -m piper -m /tmp/voces/$v.onnx -f /tmp/$v.wav --length-scale 0.92 --sentence-silence 0.25
+            # voz empieza a los 0.8 s; el audio del reel (si tiene) baja al 30 %
+            ffmpeg -y -loglevel error -i "$reel" -i /tmp/$v.wav -filter_complex \
+              "[1:a]adelay=800|800,volume=1.6,apad[voz]" \
+              -map 0:v -map "[voz]" -c:v copy -c:a aac -b:a 160k -shortest \
+              reels/pruebas_voz/reel_voz_$v.mp4
+            ls -la reels/pruebas_voz/reel_voz_$v.mp4
+          done
+
+      - name: Guardar en el repo
+        run: |
+          git config user.name "KIMO Claude"
+          git config user.email "noreply@anthropic.com"
+          git add reels/pruebas_voz
+          git commit -m "Pruebas de voz para reels" || echo "Nada nuevo"
+          git pull --rebase origin main
+          git push origin HEAD:main
