@@ -1,0 +1,59 @@
+name: Reel con Higgsfield
+
+# Se dispara cuando se sube un pedido nuevo en reels/pedidos/ (lo hace la tarea de historias
+# los martes y viernes) o a mano desde la pestaña Actions.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "reels/pedidos/*.json"
+  workflow_dispatch:
+    inputs:
+      pedido:
+        description: "Ruta del pedido (ej. reels/pedidos/2026-11-10_reel.json)"
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: reel-higgsfield
+  cancel-in-progress: false
+
+jobs:
+  reel:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Buscar pedidos nuevos
+        id: pedidos
+        run: |
+          if [ -n "${{ github.event.inputs.pedido }}" ]; then
+            echo "lista=${{ github.event.inputs.pedido }}" >> "$GITHUB_OUTPUT"
+          else
+            lista=$(git diff --name-only --diff-filter=A HEAD~1 HEAD -- 'reels/pedidos/*.json' | tr '\n' ' ')
+            echo "lista=$lista" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Generar video(s)
+        if: steps.pedidos.outputs.lista != ''
+        env:
+          HIGGSFIELD_KEY: ${{ secrets.HIGGSFIELD_KEY }}
+        run: |
+          for p in ${{ steps.pedidos.outputs.lista }}; do
+            python3 reels/higgsfield_reel.py "$p"
+          done
+
+      - name: Guardar video(s) en el repo
+        if: steps.pedidos.outputs.lista != ''
+        run: |
+          git config user.name "KIMO Claude"
+          git config user.email "noreply@anthropic.com"
+          git add reels/*.mp4
+          git commit -m "Reel generado con Higgsfield" || echo "Nada nuevo"
+          git pull --rebase origin main
+          git push origin HEAD:main
