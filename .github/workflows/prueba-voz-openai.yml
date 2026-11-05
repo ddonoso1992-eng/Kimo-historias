@@ -1,0 +1,53 @@
+name: Prueba de voces (OpenAI)
+
+# Genera el reel de prueba con 3 voces de OpenAI para que Diego elija.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/prueba-voz-openai.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  voces:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Instalar ffmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg jq
+
+      - name: Generar voces y mezclar con el reel
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          mkdir -p reels/pruebas_voz
+          texto="¡Mira esto! La pulsera italiana que todos están usando. Ármala a tu estilo, con charms desde seis dólares. La pulsera completa, solo doce. Envíos a todo Ecuador. ¡Escríbenos por WhatsApp y pide la tuya!"
+          estilo="Habla en español latinoamericano neutro, como una persona joven de Ecuador grabando un reel de Instagram: entusiasta, cercana, natural y vendedora, con energía pero sin gritar. Ritmo ágil, sonrisa en la voz."
+          reel=reels/2026-11-04_prueba_pulsera_venta_v3.mp4
+          for v in coral ash sage; do
+            body=$(jq -n --arg t "$texto" --arg i "$estilo" --arg v "$v" \
+              '{model:"gpt-4o-mini-tts", voice:$v, input:$t, instructions:$i, response_format:"mp3"}')
+            code=$(curl -sS -o /tmp/$v.mp3 -w "%{http_code}" https://api.openai.com/v1/audio/speech \
+              -H "Authorization: Bearer $OPENAI_API_KEY" -H "Content-Type: application/json" -d "$body")
+            echo "OpenAI $v: HTTP $code"
+            if [ "$code" != "200" ]; then head -c 400 /tmp/$v.mp3; echo; exit 1; fi
+            ffmpeg -y -loglevel error -i "$reel" -i /tmp/$v.mp3 -filter_complex \
+              "[1:a]adelay=600|600,volume=1.4,apad[voz]" \
+              -map 0:v -map "[voz]" -c:v copy -c:a aac -b:a 160k -shortest \
+              reels/pruebas_voz/reel_voz_openai_$v.mp4
+            ls -la reels/pruebas_voz/reel_voz_openai_$v.mp4
+          done
+
+      - name: Guardar en el repo
+        run: |
+          git config user.name "KIMO Claude"
+          git config user.email "noreply@anthropic.com"
+          git add reels/pruebas_voz
+          git commit -m "Pruebas de voz OpenAI para reels" || echo "Nada nuevo"
+          git pull --rebase origin main
+          git push origin HEAD:main
