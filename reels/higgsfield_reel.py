@@ -11,6 +11,14 @@ Pedido (JSON):
   salida   -> nombre del video final sin extensión (ej. 2026-11-10_reel)
   textos   -> opcional, textos de venta encima del video (sin emojis; usa \n para 2 líneas):
               {"gancho": "...", "precio": "...", "cierre": "...", "whatsapp": "..."}
+  escena   -> opcional: crea primero la foto con OpenAI (gpt-image-1) a partir de la foto real
+              del producto: {"foto_producto": "<URL de Shopify>", "prompt": "..."}
+              La foto queda en fotos_ia/<salida>.png y se usa como "imagen".
+  solo_imagen -> opcional true: solo crea la foto de la escena y termina (para revisar barato)
+  voz      -> opcional: {"guion": "...", "voz": "sage"} agrega voz en off de OpenAI.
+              Solo se pide cuando Diego lo aprueba (cuesta centavos).
+Al terminar se guarda reels/<salida>.json con los request_id de los clips, para rehacer
+el video (por ejemplo con voz) SIN volver a pagar Higgsfield.
 
 Cada clip de Higgsfield dura máximo 10 s. Si hay varios, se unen en uno solo,
 se pasa a vertical 1080x1920 (formato reel) y se ponen los textos.
@@ -127,8 +135,64 @@ def armar(clips, salida, textos):
     print(f"Reel listo: {salida} ({dur:.1f} s)")
 
 
+def git_subir(rutas, mensaje):
+    subprocess.run(["git", "add"] + rutas, check=True)
+    subprocess.run(["git", "commit", "-m", mensaje], check=False)
+    subprocess.run(["git", "pull", "--rebase", "-q", "origin", "main"], check=True)
+    subprocess.run(["git", "push", "-q", "origin", "HEAD:main"], check=True)
+
+
+def crear_escena(escena, salida):
+    clave = os.environ.get("OPENAI_API_KEY", "").strip()
+    if not clave:
+        sys.exit("Falta OPENAI_API_KEY en los secretos del repo.")
+    foto = "/tmp/producto.png"
+    urllib.request.urlretrieve(escena["foto_producto"], "/tmp/producto_orig")
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", "/tmp/producto_orig", foto], check=True)
+    r = subprocess.run(
+        ["curl", "-sS", "https://api.openai.com/v1/images/edits",
+         "-H", f"Authorization: Bearer {clave}",
+         "-F", "model=gpt-image-1", "-F", f"image[]=@{foto}",
+         "-F", "prompt=" + escena["prompt"] + " Keep the product exactly identical to the reference photo "
+                           "(same shape, colors and details). Photorealistic, vertical 2:3, no text, no logos.",
+         "-F", "size=1024x1536", "-F", "quality=medium", "-F", "n=1"],
+        capture_output=True, text=True, check=True)
+    datos = json.loads(r.stdout)
+    if "data" not in datos:
+        sys.exit(f"OpenAI imagen falló: {r.stdout[:500]}")
+    import base64
+    destino = f"fotos_ia/{salida}.png"
+    open(destino, "wb").write(base64.b64decode(datos["data"][0]["b64_json"]))
+    git_subir([destino], f"Foto de escena para reel {salida}")
+    time.sleep(20)  # que GitHub publique el archivo antes de mandarlo a Higgsfield
+    print(f"Escena creada: {destino}")
+    return destino
+
+
+def poner_voz(video, voz, salida):
+    clave = os.environ.get("OPENAI_API_KEY", "").strip()
+    if not clave:
+        sys.exit("Falta OPENAI_API_KEY en los secretos del repo.")
+    estilo = ("Habla en español latinoamericano neutro, como una persona joven de Ecuador grabando un reel: "
+              "natural, cercana, emocionada pero sin gritar, con pausas cortas y sonrisa en la voz.")
+    cuerpo = json.dumps({"model": "gpt-4o-mini-tts", "voice": voz.get("voz", "sage"),
+                         "input": voz["guion"], "instructions": estilo, "response_format": "mp3"}).encode()
+    req = urllib.request.Request("https://api.openai.com/v1/audio/speech", data=cuerpo, method="POST")
+    req.add_header("Authorization", f"Bearer {clave}")
+    req.add_header("Content-Type", "application/json")
+    with urllib.request.urlopen(req, timeout=120) as r:
+        open("/tmp/voz.mp3", "wb").write(r.read())
+    ff(["-i", video, "-i", "/tmp/voz.mp3", "-filter_complex", "[1:a]adelay=600|600,volume=1.4,apad[voz]",
+        "-map", "0:v", "-map", "[voz]", "-c:v", "copy", "-c:a", "aac", "-b:a", "160k", "-shortest", salida])
+    print(f"Voz agregada: {salida}")
+
+
 def main():
     pedido = json.load(open(sys.argv[1], encoding="utf-8"))
+    if pedido.get("escena") and not pedido.get("imagen"):
+        pedido["imagen"] = crear_escena(pedido["escena"], pedido["salida"])
+    if pedido.get("solo_imagen"):
+        return
     clips = pedido.get("clips") or [{"prompt": pedido["prompt"], "duracion": pedido.get("duracion", 5)}]
     # mandar todos los clips a la vez y luego esperarlos
     # si un clip ya trae request_id (ya pagado), solo se descarga; no se vuelve a generar
@@ -139,7 +203,18 @@ def main():
         destino = f"/tmp/clip_{i}.mp4"
         esperar(rid, destino)
         archivos.append(destino)
-    armar(archivos, f"reels/{pedido['salida']}.mp4", pedido.get("textos"))
+    final = f"reels/{pedido['salida']}.mp4"
+    if pedido.get("voz"):
+        armar(archivos, "/tmp/sin_voz.mp4", pedido.get("textos"))
+        poner_voz("/tmp/sin_voz.mp4", pedido["voz"], final)
+    else:
+        armar(archivos, final, pedido.get("textos"))
+    # datos para rehacer sin volver a pagar Higgsfield
+    info = dict(pedido)
+    info["clips"] = [dict(c, request_id=rid, imagen=c.get("imagen", pedido.get("imagen")))
+                     for c, rid in zip(clips, ids)]
+    info.pop("escena", None)
+    json.dump(info, open(f"reels/{pedido['salida']}.json", "w"), ensure_ascii=False, indent=2)
 
 
 if __name__ == "__main__":

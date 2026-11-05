@@ -47,7 +47,10 @@ jobs:
         if: steps.pedidos.outputs.lista != ''
         env:
           HIGGSFIELD_KEY: ${{ secrets.HIGGSFIELD_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
+          git config user.name "KIMO Claude"
+          git config user.email "noreply@anthropic.com"
           for p in ${{ steps.pedidos.outputs.lista }}; do
             python3 reels/higgsfield_reel.py "$p"
           done
@@ -57,7 +60,7 @@ jobs:
         run: |
           git config user.name "KIMO Claude"
           git config user.email "noreply@anthropic.com"
-          git add reels/*.mp4
+          git add reels/*.mp4 reels/*.json
           git commit -m "Reel generado con Higgsfield" || echo "Nada nuevo"
           git pull --rebase origin main
           git push origin HEAD:main
