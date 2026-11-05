@@ -11,6 +11,8 @@ Pedido (JSON):
   salida   -> nombre del video final sin extensión (ej. 2026-11-10_reel)
   textos   -> opcional, textos de venta encima del video (sin emojis; usa \n para 2 líneas):
               {"gancho": "...", "precio": "...", "cierre": "...", "whatsapp": "..."}
+              "precio_y" opcional (fracción de la altura, por defecto 0.64) para mover el precio
+              si tapa el producto.
   escena   -> opcional: crea primero la foto con OpenAI (gpt-image-1.5) a partir de la foto real
               del producto: {"foto_producto": "<URL de Shopify>", "prompt": "..."}
               La foto queda en fotos_ia/<salida>.png y se usa como "imagen".
@@ -118,7 +120,7 @@ def armar(clips, salida, textos):
             # una línea por renglón (algunas versiones de ffmpeg muestran el salto de línea como un cuadrito)
             for j, linea in enumerate(textos["precio"].split("\n")):
                 filtros.append(f"drawtext=fontfile={f}:textfile={texto(f'p{j}', linea.strip())}:fontsize=66:"
-                               f"fontcolor=0xFFE14D:{caja}:x=(w-tw)/2:y=h*0.64+{j}*110:"
+                               f"fontcolor=0xFFE14D:{caja}:x=(w-tw)/2:y=h*{float(textos.get('precio_y', 0.64))}+{j}*110:"
                                f"enable='between(t,3,{dur:.2f})'")
         fin = max(dur - 4, 0)
         if textos.get("cierre"):

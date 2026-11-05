@@ -1,0 +1,25 @@
+{
+  "imagen": "fotos_ia/2026-11-07_pulsera-mano-de-fatima-persona.jpg",
+  "salida": "2026-11-06_reel",
+  "clips": [
+    {
+      "prompt": "High-end realistic jewelry ad, Friday night getting ready to go out with friends. Smooth cinematic push-in toward the sterling silver Hand of Fatima bracelet on her wrist as she slowly turns her hand near her face, warm golden window light catches the polished silver snake chain and the black stone in the hamsa charm with bright sparkles, she breaks into a confident proud smile. Shallow depth of field, soft glossy beauty lighting, premium Instagram reel look, the product keeps exactly the same design.",
+      "duracion": 10,
+      "request_id": "01a1aa54-5be6-7db5-982f-fc31043c81a0",
+      "imagen": "fotos_ia/2026-11-07_pulsera-mano-de-fatima-persona.jpg"
+    },
+    {
+      "prompt": "Aspirational lifestyle commercial, she is at a cozy rooftop party at golden hour with blurred string lights and friends laughing in the background. She lifts her wrist toward the camera to proudly show off the silver Hand of Fatima charm bracelet, gently touches the hamsa charm with her other fingers, then laughs and tilts her head. Camera does a slow orbit around her wrist with warm bokeh and light flares, realistic skin and natural motion, the product keeps exactly the same design.",
+      "duracion": 10,
+      "request_id": "01a1aa54-5ee5-78ad-925c-aba4d57a0ebd",
+      "imagen": "fotos_ia/2026-11-07_pulsera-mano-de-fatima-persona.jpg"
+    }
+  ],
+  "textos": {
+    "gancho": "Tu amuleto para salir",
+    "precio": "Pulsera Plata 925 $20",
+    "cierre": "Envíos a todo Ecuador",
+    "whatsapp": "Pide por WhatsApp 098 325 1505",
+    "precio_y": 0.78
+  }
+}
