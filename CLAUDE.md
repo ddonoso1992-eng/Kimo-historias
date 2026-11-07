@@ -46,6 +46,9 @@ El 6-nov salió dos veces el reel de la pulsera Mano de Fátima (dos tandas lo p
 3. Una sola `createScheduledPost` por pieza. Si da error, vuelve a consultar `getScheduledPosts` antes de reintentar
    (a veces sí quedó creada).
 
-## Reels con voz
-Si Diego aprueba "con voz", se programa SOLO el archivo `*_voz.mp4` con `videoVolume: 100`. Confirma con
-`ffprobe -show_streams` que tiene pista de audio antes de programarlo. Nunca subas el reel sin voz en ese caso.
+## Reels con voz (= voz + música)
+Si Diego aprueba "con voz", el reel lleva **voz Y música**, nunca solo una de las dos:
+- Se programa SOLO el archivo `*_voz.mp4`, con `audioConfiguration` de la canción en tendencia,
+  `audioVolume: 25` (música de fondo) y `videoVolume: 100` (la voz).
+- Antes de programar, confirma con `ffprobe -show_streams` que el archivo tiene pista de audio.
+- Si Metricool no acepta la canción, NO lo publiques solo con voz: déjalo sin programar y avisa a Diego.
