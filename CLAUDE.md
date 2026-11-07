@@ -54,6 +54,8 @@ Si Diego aprueba "con voz", el reel lleva **voz Y música**, nunca solo una de l
 - Si Metricool no acepta la canción, NO lo publiques solo con voz: déjalo sin programar y avisa a Diego.
 
 ## Estilo editorial para TODAS las historias (pedido de Diego, 2026-11-07)
+**PRIORIDAD:** esta sección MANDA sobre cualquier instrucción de diseño del prompt de la tarea "Kimo tareas para 2 dias" (pasos 3 y 4: plantillas kimo_historias.py producto/cta, botón de WhatsApp, "¡Última unidad!", alternar foto realista/fantasía). Lo demás del prompt (fecha objetivo, temas por día, GitHub, Drive, aprobación, publicación con Metricool) sigue igual.
+- Las 2 historias van con foto de OpenAI (una por producto, primero A y luego B): selected_api `ChatGPTCLIAPI`, action `create_image_edit`, tool_name `chatgpt_openai_create_image_edit`, connection_id `02729133-591d-8a12-9e30-b6058483be5e`, params `{"image": "<foto Shopify>", "model": "gpt-image-1", "size": "1024x1536", "output_format": "jpeg", "results_number": 1, "prompt": "..."}`. Si el error dice que el modelo no existe (no se cobra), una vez con `gpt-image-1.5`. Guarda la imagen en `fotos_ia/F_<handle>_persona.jpg` (con persona) o `_escena.jpg`. La historia 1 lleva persona (manos/muñeca) cuando el producto lo permita.
 Desde las artes del 2026-11-11, las 2 historias del día van en estilo **editorial, serio y elegante** (tipo Pandora/Mejuri), sin desesperación:
 - Foto: una generación de OpenAI (create_image_edit) partiendo de la foto real de Shopify, producto en contexto real
   (muñeca/mano, cama, escritorio, mesa), luz natural cálida, tonos crema/neutros, tercio inferior despejado para texto.
