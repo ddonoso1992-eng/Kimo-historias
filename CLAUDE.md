@@ -52,3 +52,16 @@ Si Diego aprueba "con voz", el reel lleva **voz Y música**, nunca solo una de l
   `audioVolume: 25` (música de fondo) y `videoVolume: 100` (la voz).
 - Antes de programar, confirma con `ffprobe -show_streams` que el archivo tiene pista de audio.
 - Si Metricool no acepta la canción, NO lo publiques solo con voz: déjalo sin programar y avisa a Diego.
+
+## Estilo editorial para TODAS las historias (pedido de Diego, 2026-11-07)
+Desde las artes del 2026-11-11, las 2 historias del día van en estilo **editorial, serio y elegante** (tipo Pandora/Mejuri), sin desesperación:
+- Foto: una generación de OpenAI (create_image_edit) partiendo de la foto real de Shopify, producto en contexto real
+  (muñeca/mano, cama, escritorio, mesa), luz natural cálida, tonos crema/neutros, tercio inferior despejado para texto.
+  El producto debe quedar IDÉNTICO y a su TAMAÑO REAL (cuidado con las escalas).
+- Arte: `python3 tools/historia_editorial.py FOTO salida.jpg "ETIQUETA" "Titular" "Producto  ·  $precio" "Respóndenos para separarlo/a"`.
+  La plantilla trae fuentes (tools/fonts), logo y el aviso obligatorio en letra pequeña:
+  "Imagen referencial. Antes de comprar, solicita una foto real del producto: el tamaño y las proporciones pueden variar según el ángulo de la fotografía."
+- PROHIBIDO lenguaje de urgencia agresiva ("¡Última unidad!", "¡Apúrate!", "corre", contadores, precios tachados).
+  Titulares cortos y tranquilos (máx. 5 palabras): "Un detalle que se queda", "Nuevo en KIMO", "Para regalar esta Navidad".
+- Costo: UNA sola generación por imagen, nunca en paralelo, sin reintentos (~$0,02 c/u). Si falla, usa la foto de Shopify con
+  `kimo_historias.py producto` y avísale a Diego qué falló.

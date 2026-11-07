@@ -12,7 +12,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 W, H = 1080, 1920
 INK, MUTED = (60, 50, 46), (120, 105, 96)
-GF = os.environ.get("KIMO_FONTS", "/usr/share/fonts/truetype/google-fonts/")
+GF = os.environ.get("KIMO_FONTS", os.path.join(os.path.dirname(os.path.abspath(__file__)), "fonts") + "/")
 DISCLAIMER = (
     "Imagen referencial. Antes de comprar, solicita una foto real del producto:",
     "el tamaño y las proporciones pueden variar según el ángulo de la fotografía.",
