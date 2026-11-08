@@ -46,6 +46,13 @@ El 6-nov salió dos veces el reel de la pulsera Mano de Fátima (dos tandas lo p
 3. Una sola `createScheduledPost` por pieza. Si da error, vuelve a consultar `getScheduledPosts` antes de reintentar
    (a veces sí quedó creada).
 
+## Historias de Instagram con Windsor, no con Metricool (pedido de Diego, 2026-11-08)
+**PRIORIDAD:** esta sección MANDA sobre el prompt de "Kimo tareas para 2 dias" (paso 7 y "AHORRO DE ZAPIER"). El plan gratis de Metricool solo publica 20 posts al mes por red, así que las historias de IG ya no pasan por ahí.
+- En cada tarea "Publicar historias KIMO <F>", las historias de IG van con `mcp__Windsor_ai__execute_action` (cárgala con ToolSearch): connector `instagram`, action `create_story`, account `17841467127423464` (@kimo.ecu), params `{"image_url": "<URL>"}` o `{"video_url": "<URL>"}`. Publica al instante: la tarea ya corre a las 10:52, así que una llamada tras otra, en orden.
+- URLs: imágenes con raw.githubusercontent.com. Video con jsDelivr fijado al commit, porque raw lo sirve como octet-stream: `https://cdn.jsdelivr.net/gh/ddonoso1992-eng/Kimo-historias@<sha completo del commit que subió el video>/historias/F_video.mp4`. Los links de Drive no sirven para Windsor.
+- Una sola llamada por pieza, sin reintentos. Si una falla, para las que siguen y avisa a Diego con el error exacto. No uses Metricool de respaldo para historias sin que él lo diga.
+- Reels y TikTok siguen en Metricool (los reels llevan música y Windsor no la pone), y cuentan para el tope de 20. Antes de programar en Metricool cuenta los publicados del mes con `getScheduledPosts` (cada red suma aparte); si ya van 20, no programes y avisa a Diego.
+
 ## Reels con voz (= voz + música)
 Si Diego aprueba "con voz", el reel lleva **voz Y música**, nunca solo una de las dos:
 - Se programa SOLO el archivo `*_voz.mp4`, con `audioConfiguration` de la canción en tendencia,
