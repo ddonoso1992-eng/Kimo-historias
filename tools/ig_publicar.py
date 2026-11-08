@@ -107,11 +107,17 @@ def revisar_url(url):
 
 def buscar_audio(busqueda, tipo="music"):
     r = llamar("GET", "ig_audio", {"audio_type": tipo, "user_id": IG_ID, "search_query": busqueda})
-    return r.get("data", [])
+    return lista_audio(r)
+
+
+def lista_audio(r):
+    """La respuesta viene en "audio" (a veces con "data" adentro), no en "data" como el resto de la API."""
+    a = r.get("audio", r.get("data", []))
+    return a.get("data", []) if isinstance(a, dict) else a
 
 
 def id_audio(item):
-    return str(item.get("id") or item.get("audio_id") or "")
+    return str(item.get("audio_id") or item.get("id") or "")
 
 
 def elegir_audio(pub):
@@ -204,7 +210,7 @@ def mover(ruta, carpeta, pub, **resultado):
 def diagnostico(diag, paso):
     """Averigua por qué no aparece música. Nada de esto publica: un contenedor sin publicar caduca solo."""
     q = {"audio_type": "music", "user_id": IG_ID, "search_query": diag["busqueda"]}
-    resumen = lambda r: {"n": len(r.get("data", [])), "primero": (r.get("data") or [None])[0], "claves": sorted(r)}
+    resumen = lambda r: {"n": len(lista_audio(r)), "primero": (lista_audio(r) or [None])[0], "claves": sorted(r)}
     for v in ("v23.0", "v24.0", "v25.0"):
         paso(f"buscar {v}", lambda v=v: resumen(llamar("GET", "ig_audio", q, api=f"https://graph.facebook.com/{v}")))
     paso("buscar original_sound", lambda: resumen(llamar("GET", "ig_audio", {**q, "audio_type": "original_sound"})))
@@ -218,13 +224,13 @@ def diagnostico(diag, paso):
     paso("buscar con token de pagina", con_token_de_pagina)
     paso("datos del audio conocido", lambda: llamar("GET", diag["audio_id"], {"user_id": IG_ID}))
 
-    def contenedor():
+    def contenedor(audio):
         url = url_publica(diag["archivo"], git("rev-parse", "HEAD"))
         revisar_url(url)
-        c = llamar("POST", f"{IG_ID}/media", {
-            "media_type": "REELS", "video_url": url, "caption": "prueba sin publicar",
-            "audio_configuration": json.dumps({"audio_id": diag["audio_id"], "audio_volume": 25, "video_volume": 0}),
-        })["id"]
+        datos = {"media_type": "REELS", "video_url": url, "caption": "prueba sin publicar"}
+        if audio:
+            datos["audio_configuration"] = json.dumps({"audio_id": audio, "audio_volume": 25, "video_volume": 0})
+        c = llamar("POST", f"{IG_ID}/media", datos)["id"]
         for _ in range(30):
             e = llamar("GET", c, {"fields": "status_code,status"})
             if e.get("status_code") in ("FINISHED", "ERROR", "EXPIRED"):
@@ -232,7 +238,11 @@ def diagnostico(diag, paso):
             time.sleep(10)
         return {k: e.get(k) for k in ("status_code", "status")}
 
-    paso("contenedor con musica (NO se publica)", contenedor)
+    paso("contenedor sin musica (NO se publica)", lambda: contenedor(None))
+    paso("contenedor con musica (NO se publica)", lambda: contenedor(diag["audio_id"]))
+    otro = lista_audio(llamar("GET", "ig_audio", q))
+    if otro:
+        paso("contenedor con musica buscada (NO se publica)", lambda: contenedor(id_audio(otro[0])))
 
 
 def comprobar():
@@ -252,7 +262,7 @@ def comprobar():
     paso("cupo_24h", lambda: llamar("GET", f"{IG_ID}/content_publishing_limit", {"fields": "config,quota_usage"}))
     for b in busquedas:
         paso(f"musica: {b}", lambda b=b: buscar_audio(b)[:5])
-    paso("tendencia", lambda: llamar("GET", "ig_audio", {"audio_type": "music", "user_id": IG_ID}).get("data", [])[:5])
+    paso("tendencia", lambda: lista_audio(llamar("GET", "ig_audio", {"audio_type": "music", "user_id": IG_ID}))[:5])
     diag = json.loads(pedido.read_text(encoding="utf-8")).get("diagnostico")
     if diag:
         diagnostico(diag, paso)
