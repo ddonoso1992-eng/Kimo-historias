@@ -46,12 +46,15 @@ El 6-nov salió dos veces el reel de la pulsera Mano de Fátima (dos tandas lo p
 3. Una sola `createScheduledPost` por pieza. Si da error, vuelve a consultar `getScheduledPosts` antes de reintentar
    (a veces sí quedó creada).
 
-## Historias de Instagram con Windsor, no con Metricool (pedido de Diego, 2026-11-08)
-**PRIORIDAD:** esta sección MANDA sobre el prompt de "Kimo tareas para 2 dias" (paso 7 y "AHORRO DE ZAPIER"). El plan gratis de Metricool solo publica 20 posts al mes por red, así que las historias de IG ya no pasan por ahí.
-- En cada tarea "Publicar historias KIMO <F>", las historias de IG van con `mcp__Windsor_ai__execute_action` (cárgala con ToolSearch): connector `instagram`, action `create_story`, account `17841467127423464` (@kimo.ecu), params `{"image_url": "<URL>"}` o `{"video_url": "<URL>"}`. Publica al instante: la tarea ya corre a las 10:52, así que una llamada tras otra, en orden.
-- URLs: imágenes con raw.githubusercontent.com. Video con jsDelivr fijado al commit, porque raw lo sirve como octet-stream: `https://cdn.jsdelivr.net/gh/ddonoso1992-eng/Kimo-historias@<sha completo del commit que subió el video>/historias/F_video.mp4`. Los links de Drive no sirven para Windsor.
-- Una sola llamada por pieza, sin reintentos. Si una falla, para las que siguen y avisa a Diego con el error exacto. No uses Metricool de respaldo para historias sin que él lo diga.
-- TikTok sigue en Metricool y cuenta para el tope de 20. Antes de programar en Metricool cuenta los publicados del mes con `getScheduledPosts` (cada red suma aparte); si ya van 20, no programes y avisa a Diego.
+## Historias de Instagram con el publicador propio (pedido de Diego, 2026-11-08)
+**PRIORIDAD:** esta sección MANDA sobre cualquier prompt que diga publicar historias con Metricool. Probado el 2026-11-08: gratis y sin tope de Metricool.
+- En cada tarea "Publicar historias KIMO <F>", después de revisar el stock, crea un archivo por pieza en `programados/`: `F_story_1.json`, `F_story_2.json`, `F_story_3.json`... (se publican en ese orden), con `{"fecha": "<hora actual, AAAA-MM-DDTHH:MM:00-05:00>", "tipo": "STORY", "archivo": "historias/<archivo>"}`. Un solo commit y push: eso dispara el workflow "Publicar en Instagram".
+- Anti-duplicados: si ese archivo ya existe en `programados/`, `en_proceso/`, `publicados/` o `errores/`, no crees otro.
+- Espera con `git pull` cada 30 s, hasta 15 min, a que todos estén en `programados/publicados/` (trae el enlace) o `programados/errores/` (trae el error). No crees archivos nuevos para reintentar sin que Diego lo diga.
+- Respaldo solo si no hay acceso de escritura a GitHub: Windsor (`mcp__Windsor_ai__execute_action`, connector `instagram`, action `create_story`, account `17841467127423464`). Las imágenes con raw.githubusercontent.com y el video con `https://cdn.jsdelivr.net/gh/ddonoso1992-eng/Kimo-historias@main/historias/F_video.mp4`.
+
+## TikTok sigue en Metricool
+Cuenta para el tope de 20 publicaciones al mes del plan gratis. Antes de programar, cuenta los publicados del mes con `getScheduledPosts` (cada publicación por red suma una); si ya van 20, no programes y avisa a Diego.
 
 ## Reels de Instagram con el publicador propio, no con Metricool (pedido de Diego, 2026-11-08)
 **Gratis y sin tope.** El workflow "Publicar en Instagram" corre cada 10 min y publica lo que esté en `programados/` cuando llega su hora (`tools/ig_publicar.py` explica el formato). Usa el secreto `IG_TOKEN` (KIMO bot, app kimo ventas).
