@@ -1,0 +1,288 @@
+{
+  "cuando": "2026-11-08T18:35:43+00:00",
+  "cuenta": {
+    "id": "17841467127423464",
+    "media_count": 227,
+    "username": "kimo.ecu"
+  },
+  "permisos": [
+    "pages_show_list",
+    "ads_management",
+    "ads_read",
+    "business_management",
+    "instagram_basic",
+    "instagram_manage_comments",
+    "instagram_manage_insights",
+    "instagram_content_publish",
+    "whatsapp_business_management",
+    "instagram_manage_messages",
+    "pages_read_engagement",
+    "pages_manage_ads",
+    "whatsapp_business_messaging",
+    "instagram_shopping_tag_products",
+    "instagram_branded_content_brand",
+    "instagram_branded_content_ads_brand",
+    "whatsapp_business_manage_events",
+    "instagram_manage_contents",
+    "public_profile"
+  ],
+  "cupo_24h": {
+    "data": [
+      {
+        "quota_usage": 4,
+        "config": {
+          "quota_total": 100,
+          "quota_duration": 86400
+        }
+      }
+    ]
+  },
+  "musica: BbY WOW": [
+    {
+      "audio_id": "2385329925545043",
+      "duration_in_ms": 225834,
+      "title": "BbY WOW",
+      "display_artist": "KAROL G, Judeline, rusowsky",
+      "audio_type": "music",
+      "on_platform_audio_preview_link": "https://www.instagram.com/reels/audio/2385329925545043/",
+      "ig_username": "karolg",
+      "is_ads_eligible": false
+    },
+    {
+      "audio_id": "1256638451637432",
+      "duration_in_ms": 170071,
+      "title": "Beautiful Life",
+      "cover_artwork_thumbnail_uri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/276155808_110421308269133_167423734358690686_n.jpg?stp=dst-jpg_s130x130_tt6&_nc_cat=1&ccb=1-7&_nc_sid=68a4df&_nc_ohc=esQIhz2jdlgQ7kNvwG7AYx2&_nc_oc=Adr_Flmas1Cu3kCKkrHFqHy1SDQ_q-Am3ahR5-42yCHffacz1EHK0G054SCIgMQ1v5w&_nc_zt=24&_nc_ht=scontent-sjc3-1.xx&edm=AOP_XFkEAAAA&_nc_gid=sXmXX0ejWemNw2ZBd3tTmg&oh=00_AQQBTsQXuPaXZ59ChAxH1pde1zEGtCYShOA7B2YZif9Jzg&oe=6AF68550",
+      "display_artist": "CALIDAD",
+      "audio_type": "music",
+      "download_url": "https://video-sjc6-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQMZ4J7IryA7AUAT9RZqOV7gowVrpcnrX8N9ZQcNyvbsXltB1sfHUSM_CtRloCJ9Hlmj4OpCtGASvs-KbLmZ4Yyb.mp4?strext=1&_nc_cat=102&_nc_sid=ef5aa3&_nc_ht=video-sjc6-1.xx.fbcdn.net&_nc_ohc=q3s4_QzHDyMQ7kNvwGjB5AL&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMC5wcm9ncmVzc2l2ZV9hdWRpb19hYWNwXzQ4X2ZyYWdfMl9hdWRpbyIsInhwdl9hc3NldF9pZCI6MTEzNDMwMTgxNzcyMTU0MiwiYXNzZXRfYWdlX2RheXMiOjEyMjIsInZpX3VzZWNhc2VfaWQiOjEwNTY4LCJkdXJhdGlvbl9zIjoxNzAsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&edm=AOP_XFkEAAAA&_nc_zt=28&oh=00_AQSzFAiEI_HDMm_vgCVxXyzEhRT8RN0r_pP5w_05tqkCpg&oe=6AF6A85C&dl=1"
+    },
+    {
+      "audio_id": "959794905484673",
+      "duration_in_ms": 152760,
+      "title": "Slow Down (feat. Dawson March)",
+      "cover_artwork_thumbnail_uri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t1.6435-1/83828461_100484354863671_6826093103804317696_n.jpg?stp=dst-jpg_s130x130_tt6&_nc_cat=1&ccb=1-7&_nc_sid=68a4df&_nc_ohc=UZV01byUK70Q7kNvwGqWcuc&_nc_oc=Adrugl82srvynHzJHTXindl4Sn1d9MM4iDxbVmffrx3RvWyYpcbZzaEPBqxZNH9vzMs&_nc_zt=24&_nc_ht=scontent-sjc3-1.xx&edm=AOP_XFkEAAAA&_nc_gid=sXmXX0ejWemNw2ZBd3tTmg&oh=00_AQT3lpPGz4IM-zqy3LiHqmwKhHazlocVt02OzCypDqG46A&oe=6B181F8A",
+      "display_artist": "The K Club",
+      "audio_type": "music",
+      "download_url": "https://video-sjc6-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQNyIWS3QPiw_z3N2efQUXzNRgi7co7810OXpl9gGFvwsF_aUpH0mMhtoyYFDY5Rii4vxz0WHrj1MturVlBPT7OW.mp4?strext=1&_nc_cat=109&_nc_sid=ef5aa3&_nc_ht=video-sjc6-1.xx.fbcdn.net&_nc_ohc=yGHJaa-BECoQ7kNvwHCv3b9&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMC5wcm9ncmVzc2l2ZV9hdWRpb19hYWNwXzQ4X2ZyYWdfMl9hdWRpbyIsInhwdl9hc3NldF9pZCI6NjEwMDQxOTU0Nzc1MzI4LCJhc3NldF9hZ2VfZGF5cyI6Njc0LCJ2aV91c2VjYXNlX2lkIjoxMDgyMiwiZHVyYXRpb25fcyI6MTUyLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&edm=AOP_XFkEAAAA&_nc_zt=28&oh=00_AQRIlNRKvQirVG_8zL4cEK8atLolazl48vD1MlzCK2OU3g&oe=6AF69AE5&dl=1"
+    },
+    {
+      "audio_id": "1282127816171736",
+      "duration_in_ms": 24500,
+      "title": "Dreaming You (Reels Sound - Reaction)",
+      "cover_artwork_thumbnail_uri": "https://static.xx.fbcdn.net/rsrc.php/yM/r/LXmIH1W7DBC.webp",
+      "display_artist": "Last Jerónimo",
+      "audio_type": "music",
+      "download_url": "https://video-sjc6-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQN4imPQ-J0swxAcfDYcuxY8gz_RBKsyzT6xd663D4vf_BZ3XZ1bEfoM3f_tSPTWTJ1n10i3AyaNxzdGPfajeiuy.mp4?strext=1&_nc_cat=102&_nc_sid=ef5aa3&_nc_ht=video-sjc6-1.xx.fbcdn.net&_nc_ohc=lncsxBUXUHgQ7kNvwH1-ywK&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMC5wcm9ncmVzc2l2ZV9hdWRpb19hYWNwXzQ4X2ZyYWdfMl9hdWRpbyIsInhwdl9hc3NldF9pZCI6MTEwODg2ODYwNzkwNzM4OCwiYXNzZXRfYWdlX2RheXMiOjY3NCwidmlfdXNlY2FzZV9pZCI6MTA4MjIsImR1cmF0aW9uX3MiOjI0LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&edm=AOP_XFkEAAAA&_nc_zt=28&oh=00_AQR-1BKpDooH4fOZQGN41f9dZlkbGZW5j9RwKHVSy3PzVg&oe=6AF68730&dl=1"
+    },
+    {
+      "audio_id": "1624129158484812",
+      "duration_in_ms": 121130,
+      "title": "Wow",
+      "cover_artwork_thumbnail_uri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/469664734_1119322796867067_2405028789482486743_n.jpg?stp=c159.159.682.682a_dst-jpg_s130x130_tt6&_nc_cat=1&ccb=1-7&_nc_sid=68a4df&_nc_ohc=-q5W6Ue-GbMQ7kNvwG28s5Q&_nc_oc=AdqObYEEdS0ZKom7BxdXVJ5SFByt_42EWS676hqIHLYCthE0RBS-maW4P25m83jm-9o&_nc_zt=24&_nc_ht=scontent-sjc3-1.xx&edm=AOP_XFkEAAAA&_nc_gid=sXmXX0ejWemNw2ZBd3tTmg&oh=00_AQTC6I8GV7dZpc6yf8r9bt8lX9lWp9hcpeoQdpuLO4Yq1A&oe=6AF6AF7D",
+      "display_artist": "Giulio Cercato",
+      "audio_type": "music",
+      "download_url": "https://video-sjc6-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQNWoVUsoGb4MDaCvDt7GjNwXAt909AYnR2RmfGsj0j6vMK11Z4Jt9SG1HUDceuH2gBwBBJW_AsaPBynWYl1-V1Z.mp4?strext=1&_nc_cat=104&_nc_sid=ef5aa3&_nc_ht=video-sjc6-1.xx.fbcdn.net&_nc_ohc=v19Kk99U8FoQ7kNvwHOZW_C&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMC5wcm9ncmVzc2l2ZV9hdWRpb19hYWNwXzQ4X2ZyYWdfMl9hdWRpbyIsInhwdl9hc3NldF9pZCI6MTY5NzY1NDI1NzY3ODg1NCwiYXNzZXRfYWdlX2RheXMiOjczNiwidmlfdXNlY2FzZV9pZCI6MTA1NjgsImR1cmF0aW9uX3MiOjEyMSwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&edm=AOP_XFkEAAAA&_nc_zt=28&oh=00_AQRsR5aSZNN6me3CUQ9N5b33RUvRlLKHHG7Oq-hOo6eBgg&oe=6AF6A782&dl=1"
+    }
+  ],
+  "musica: Bad Bunny": [
+    {
+      "audio_id": "974503647936539",
+      "duration_in_ms": 367725,
+      "title": "BAILE INoLVIDABLE",
+      "display_artist": "Bad Bunny",
+      "audio_type": "music",
+      "on_platform_audio_preview_link": "https://www.instagram.com/reels/audio/974503647936539/",
+      "ig_username": "badbunnypr",
+      "is_ads_eligible": false
+    },
+    {
+      "audio_id": "1256638451637432",
+      "duration_in_ms": 170071,
+      "title": "Beautiful Life",
+      "cover_artwork_thumbnail_uri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/276155808_110421308269133_167423734358690686_n.jpg?stp=dst-jpg_s130x130_tt6&_nc_cat=1&ccb=1-7&_nc_sid=68a4df&_nc_ohc=esQIhz2jdlgQ7kNvwG7AYx2&_nc_oc=Adr_Flmas1Cu3kCKkrHFqHy1SDQ_q-Am3ahR5-42yCHffacz1EHK0G054SCIgMQ1v5w&_nc_zt=24&_nc_ht=scontent-sjc3-1.xx&edm=AOP_XFkEAAAA&_nc_gid=STYBHwXOCL1nUrPTSrdm9Q&oh=00_AQQ3mcG-JGO7pz265uJmBuRqciZSlXKWVeCajazaou1sUg&oe=6AF68550",
+      "display_artist": "CALIDAD",
+      "audio_type": "music",
+      "download_url": "https://video-sjc6-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQMZ4J7IryA7AUAT9RZqOV7gowVrpcnrX8N9ZQcNyvbsXltB1sfHUSM_CtRloCJ9Hlmj4OpCtGASvs-KbLmZ4Yyb.mp4?strext=1&_nc_cat=102&_nc_sid=ef5aa3&_nc_ht=video-sjc6-1.xx.fbcdn.net&_nc_ohc=q3s4_QzHDyMQ7kNvwGjB5AL&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMC5wcm9ncmVzc2l2ZV9hdWRpb19hYWNwXzQ4X2ZyYWdfMl9hdWRpbyIsInhwdl9hc3NldF9pZCI6MTEzNDMwMTgxNzcyMTU0MiwiYXNzZXRfYWdlX2RheXMiOjEyMjIsInZpX3VzZWNhc2VfaWQiOjEwNTY4LCJkdXJhdGlvbl9zIjoxNzAsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&edm=AOP_XFkEAAAA&_nc_zt=28&oh=00_AQSzFAiEI_HDMm_vgCVxXyzEhRT8RN0r_pP5w_05tqkCpg&oe=6AF6A85C&dl=1"
+    },
+    {
+      "audio_id": "2488847887958999",
+      "duration_in_ms": 125280,
+      "title": "Euphoria",
+      "cover_artwork_thumbnail_uri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/469664734_1119322796867067_2405028789482486743_n.jpg?stp=c159.159.682.682a_dst-jpg_s130x130_tt6&_nc_cat=1&ccb=1-7&_nc_sid=68a4df&_nc_ohc=-q5W6Ue-GbMQ7kNvwG28s5Q&_nc_oc=AdqObYEEdS0ZKom7BxdXVJ5SFByt_42EWS676hqIHLYCthE0RBS-maW4P25m83jm-9o&_nc_zt=24&_nc_ht=scontent-sjc3-1.xx&edm=AOP_XFkEAAAA&_nc_gid=STYBHwXOCL1nUrPTSrdm9Q&oh=00_AQS9vjLCNsSrmMtmHmGbLrwBodCIGQXiBIYFVnERxdjLIA&oe=6AF6AF7D",
+      "display_artist": "Giulio Cercato",
+      "audio_type": "music",
+      "download_url": "https://video-sjc6-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQPhGdHGxxKY3c44bd4uWQKj-WH_CVdl6C1csHwWNO_6FnBunIpCV-VOy3kSr47xqHoNkA0OxqH3jn98klNQe2-d.mp4?strext=1&_nc_cat=111&_nc_sid=ef5aa3&_nc_ht=video-sjc6-1.xx.fbcdn.net&_nc_ohc=Fwla5J26zwgQ7kNvwHjA5iU&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMC5wcm9ncmVzc2l2ZV9hdWRpb19hYWNwXzQ4X2ZyYWdfMl9hdWRpbyIsInhwdl9hc3NldF9pZCI6OTk3MzY5NjI4Mzg3MTMzLCJhc3NldF9hZ2VfZGF5cyI6MTE5NCwidmlfdXNlY2FzZV9pZCI6MTA1NjgsImR1cmF0aW9uX3MiOjEyNSwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&edm=AOP_XFkEAAAA&_nc_zt=28&oh=00_AQTwDvspxMgkC1ZlNRmOxtLAo8byZIZ-oBAByRKXLgmVKA&oe=6AF6A5FB&dl=1"
+    },
+    {
+      "audio_id": "4628559694048857",
+      "duration_in_ms": 61990,
+      "title": "Caribbean Whisper",
+      "cover_artwork_thumbnail_uri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/565129692_10162081154559646_106673485969051354_n.jpg?stp=dst-jpg_s130x130_tt6&_nc_cat=1&ccb=1-7&_nc_sid=68a4df&_nc_ohc=sKQgk_3GLxwQ7kNvwFEcPwa&_nc_oc=Adr1DTh_1IMHwgBHNokagD5-HQTTovPqvD4iHZK8gUHRmyRU51YOXYdltu9KXP2H9mU&_nc_zt=24&_nc_ht=scontent-sjc3-1.xx&edm=AOP_XFkEAAAA&_nc_gid=STYBHwXOCL1nUrPTSrdm9Q&oh=00_AQSLUcfXHgqEoTnCn77LUr3ocr5UDrzcMIp7-SfSWi4j5g&oe=6AF693E1",
+      "display_artist": "Neon Avenue",
+      "audio_type": "music",
+      "download_url": "https://video-sjc3-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQN5pA62by1rTY_S_pUv3MdkOq0xUoMWXdC6k_I7hWJDwkHXXjZd2e4a2X_CvCHZcxcJe8KjOgC_zkpz_yTIiBJj.mp4?strext=1&_nc_cat=110&_nc_sid=ef5aa3&_nc_ht=video-sjc3-1.xx.fbcdn.net&_nc_ohc=Qcxf7GFRtr4Q7kNvwEx2SWe&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMC5wcm9ncmVzc2l2ZV9hdWRpb19hYWNwXzQ4X2ZyYWdfMl9hdWRpbyIsInhwdl9hc3NldF9pZCI6OTE0NDAxMDAxNzQxOTU0LCJhc3NldF9hZ2VfZGF5cyI6ODYsInZpX3VzZWNhc2VfaWQiOjEwNTY4LCJkdXJhdGlvbl9zIjo2MSwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&edm=AOP_XFkEAAAA&_nc_zt=28&oh=00_AQQcX6SVHXKpHm4B6nIOeLR4FeCiasug7HcCPqQCOIpnzg&oe=6AF67E3C&dl=1"
+    },
+    {
+      "audio_id": "2517549261944616",
+      "duration_in_ms": 125810,
+      "title": "Batucada",
+      "cover_artwork_thumbnail_uri": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-1/315714061_685012229658445_5262212836422871685_n.jpg?stp=dst-jpg_s130x130_tt6&_nc_cat=1&ccb=1-7&_nc_sid=68a4df&_nc_ohc=fXNjcKWAZ3wQ7kNvwExe0eU&_nc_oc=AdrMpCrbZLIR_byZMIqvsnDUVMGHoyOLnc4lI5RSShsfofiAj_n6BIUfbi6D-cOLqZc&_nc_zt=24&_nc_ht=scontent-sjc3-1.xx&edm=AOP_XFkEAAAA&_nc_gid=STYBHwXOCL1nUrPTSrdm9Q&oh=00_AQS6Gpf_AjGSqFjO0zy5JzjYQ3hoZy0lTi_zQM-FF3mxIw&oe=6AF6AE7C",
+      "display_artist": "Chela Rivas",
+      "audio_type": "music",
+      "download_url": "https://video-sjc6-1.xx.fbcdn.net/o1/v/t2/f2/m69/AQOi6FziGolRGxW6H2u-8SlzUstJJoW3VxGwEzUfU_Ph47dxZCK_TcSTGqn6UPYabBbBhJjIlVMayVw35TeP2XKH.mp4?strext=1&_nc_cat=104&_nc_sid=ef5aa3&_nc_ht=video-sjc6-1.xx.fbcdn.net&_nc_ohc=APhrKbkLqlsQ7kNvwEU22kH&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMC5wcm9ncmVzc2l2ZV9hdWRpb19hYWNwXzQ4X2ZyYWdfMl9hdWRpbyIsInhwdl9hc3NldF9pZCI6MTQ2ODE5OTI3NzY4OTg0NywiYXNzZXRfYWdlX2RheXMiOjQ5NCwidmlfdXNlY2FzZV9pZCI6MTA1NjgsImR1cmF0aW9uX3MiOjEyNSwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&edm=AOP_XFkEAAAA&_nc_zt=28&oh=00_AQRQkOk0AtdmZy8jBze7l-EKADG32CN4ox6xam320L9cFg&oe=6AF68406&dl=1"
+    }
+  ],
+  "tendencia": [
+    {
+      "audio_id": "242659649830381",
+      "duration_in_ms": 536960,
+      "title": "November Rain",
+      "display_artist": "Guns N' Roses",
+      "audio_type": "music",
+      "on_platform_audio_preview_link": "https://www.instagram.com/reels/audio/242659649830381/",
+      "ig_username": "gunsnroses",
+      "is_ads_eligible": false
+    },
+    {
+      "audio_id": "203193731254034",
+      "duration_in_ms": 269869,
+      "title": "All I Want For Christmas Is You (Magical Christmas Mix)",
+      "display_artist": "Mariah Carey",
+      "audio_type": "music",
+      "on_platform_audio_preview_link": "https://www.instagram.com/reels/audio/203193731254034/",
+      "ig_username": "mariahcarey",
+      "is_ads_eligible": false
+    },
+    {
+      "audio_id": "25373412465646198",
+      "duration_in_ms": 273010,
+      "title": "Love Me",
+      "display_artist": "JMSN",
+      "audio_type": "music",
+      "on_platform_audio_preview_link": "https://www.instagram.com/reels/audio/25373412465646198/",
+      "ig_username": "jmsn",
+      "is_ads_eligible": false
+    },
+    {
+      "audio_id": "1501269788724597",
+      "duration_in_ms": 208810,
+      "title": "Housewife",
+      "display_artist": "Tate McRae",
+      "audio_type": "music",
+      "on_platform_audio_preview_link": "https://www.instagram.com/reels/audio/1501269788724597/",
+      "ig_username": "tatemcrae",
+      "is_ads_eligible": false
+    },
+    {
+      "audio_id": "3771442676501811",
+      "duration_in_ms": 220937,
+      "title": "Training Season (Live from the Royal Albert Hall)",
+      "display_artist": "Dua Lipa",
+      "audio_type": "music",
+      "on_platform_audio_preview_link": "https://www.instagram.com/reels/audio/3771442676501811/",
+      "ig_username": "dualipa",
+      "is_ads_eligible": false
+    }
+  ],
+  "buscar v23.0": {
+    "n": 11,
+    "primero": {
+      "audio_id": "2385329925545043",
+      "duration_in_ms": 225834,
+      "title": "BbY WOW",
+      "display_artist": "KAROL G, Judeline, rusowsky",
+      "audio_type": "music",
+      "on_platform_audio_preview_link": "https://www.instagram.com/reels/audio/2385329925545043/",
+      "ig_username": "karolg",
+      "is_ads_eligible": false
+    },
+    "claves": [
+      "audio"
+    ]
+  },
+  "buscar v24.0": {
+    "n": 11,
+    "primero": {
+      "audio_id": "2385329925545043",
+      "duration_in_ms": 225834,
+      "title": "BbY WOW",
+      "display_artist": "KAROL G, Judeline, rusowsky",
+      "audio_type": "music",
+      "on_platform_audio_preview_link": "https://www.instagram.com/reels/audio/2385329925545043/",
+      "ig_username": "karolg",
+      "is_ads_eligible": false
+    },
+    "claves": [
+      "audio"
+    ]
+  },
+  "buscar v25.0": {
+    "n": 11,
+    "primero": {
+      "audio_id": "2385329925545043",
+      "duration_in_ms": 225834,
+      "title": "BbY WOW",
+      "display_artist": "KAROL G, Judeline, rusowsky",
+      "audio_type": "music",
+      "on_platform_audio_preview_link": "https://www.instagram.com/reels/audio/2385329925545043/",
+      "ig_username": "karolg",
+      "is_ads_eligible": false
+    },
+    "claves": [
+      "audio"
+    ]
+  },
+  "buscar original_sound": {
+    "n": 10,
+    "primero": {
+      "audio_id": "929249818092477",
+      "duration_in_ms": 20315,
+      "title": "Don’t worry bby❤️❤️",
+      "audio_type": "original_sound",
+      "download_url": "https://video-sjc6-1.xx.fbcdn.net/o1/v/t2/f2/m86/AQNND8sQ0AbzYDgJ69prz3BlCxZWtB0lH8EveozxzvC5W_qu3MElMT43q0XTPby10aAXTzUXueCUMmSboT_dBec.mp4?_nc_cat=109&_nc_sid=ef5aa3&_nc_ht=video-sjc6-1.xx.fbcdn.net&_nc_ohc=VZp8q1XySfQQ7kNvwEB-zyx&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMC5wcm9ncmVzc2l2ZV9hdWRpbyIsInhwdl9hc3NldF9pZCI6NjM2Njc2NDQ0ODg1ODUwLCJhc3NldF9hZ2VfZGF5cyI6MTM3MSwidmlfdXNlY2FzZV9pZCI6MTAwOTksImR1cmF0aW9uX3MiOjIwLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=KGB53rlSJ693ef9gd2lBhw&edm=AOP_XFkEAAAA&_nc_zt=28&oh=00_AQQXFwtMKkG5UeucmmNI9C_wBANt13kOU_aEX4CXm5DTHQ&oe=6AF285EB",
+      "ig_username": "nandu_thakur01"
+    },
+    "claves": [
+      "audio"
+    ]
+  },
+  "buscar con token de pagina": {
+    "n": 11,
+    "primero": {
+      "audio_id": "2385329925545043",
+      "duration_in_ms": 225834,
+      "title": "BbY WOW",
+      "display_artist": "KAROL G, Judeline, rusowsky",
+      "audio_type": "music",
+      "on_platform_audio_preview_link": "https://www.instagram.com/reels/audio/2385329925545043/",
+      "ig_username": "karolg",
+      "is_ads_eligible": false
+    },
+    "claves": [
+      "audio"
+    ]
+  },
+  "datos del audio conocido": {
+    "audio_id": "2385329925545043",
+    "duration_in_ms": 225834,
+    "audio_type": "music",
+    "title": "BbY WOW",
+    "cover_artwork_thumbnail_uri": null,
+    "display_artist": "KAROL G, Judeline, rusowsky",
+    "download_url": null,
+    "on_platform_audio_preview_link": "https://www.instagram.com/reels/audio/2385329925545043/"
+  },
+  "contenedor sin musica (NO se publica)": {
+    "status_code": "FINISHED",
+    "status": "Finished: Media has been uploaded and it is ready to be published."
+  },
+  "contenedor con musica (NO se publica)": {
+    "status_code": "FINISHED",
+    "status": "Finished: Media has been uploaded and it is ready to be published."
+  },
+  "contenedor con musica buscada (NO se publica)": {
+    "status_code": "FINISHED",
+    "status": "Finished: Media has been uploaded and it is ready to be published."
+  }
+}
