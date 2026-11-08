@@ -72,5 +72,5 @@ Desde las artes del 2026-11-11, las 2 historias del día van en estilo **editori
 - Toda imagen generada con IA (OpenAI) que se suba a un producto de Shopify va como **2.ª foto** (la foto real queda 1.ª).
   Súbela con `productUpdate(product:{id}, media:[{originalSource:<URL raw de GitHub fotos_ia/...>, mediaContentType: IMAGE, alt}])`
   (usa la foto limpia, sin textos de la historia) y luego `productReorderMedia` para dejarla en posición 1 (índice, la 2.ª).
-- En la descripción del producto agrega (si no está ya) al final: `<p><em>Nota: algunas imágenes son referenciales y fueron generadas con IA. Antes de comprar, solicita una foto real del producto: el tamaño y las proporciones pueden variar según el ángulo de la fotografía.</em></p>`
+- En la descripción del producto agrega (si no está ya) al final la MISMA nota que llevan las historias, exacta: `<p><em>Imagen referencial. Antes de comprar, solicita una foto real del producto: el tamaño y las proporciones pueden variar según el ángulo de la fotografía.</em></p>`
 - Cuando el producto sea pulsera/joya italiana, genera la imagen con la foto real de la pulsera y del charm como referencia: eslabones cuadrados (~9x9 mm), pegados, y el charm como un eslabón más.
