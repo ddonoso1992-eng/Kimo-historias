@@ -45,10 +45,10 @@ class ErrorMeta(Exception):
     pass
 
 
-def llamar(metodo, ruta, datos=None):
+def llamar(metodo, ruta, datos=None, token=None, api=API):
     """Llama a la API. El token va en la cabecera para que nunca salga en una URL o un log."""
-    token = os.environ["IG_TOKEN"].strip()
-    url = f"{API}/{ruta}"
+    token = token or os.environ["IG_TOKEN"].strip()
+    url = f"{api}/{ruta}"
     cuerpo = None
     if metodo == "GET" and datos:
         url += "?" + urllib.parse.urlencode(datos)
@@ -201,6 +201,40 @@ def mover(ruta, carpeta, pub, **resultado):
     return nueva
 
 
+def diagnostico(diag, paso):
+    """Averigua por qué no aparece música. Nada de esto publica: un contenedor sin publicar caduca solo."""
+    q = {"audio_type": "music", "user_id": IG_ID, "search_query": diag["busqueda"]}
+    resumen = lambda r: {"n": len(r.get("data", [])), "primero": (r.get("data") or [None])[0], "claves": sorted(r)}
+    for v in ("v23.0", "v24.0", "v25.0"):
+        paso(f"buscar {v}", lambda v=v: resumen(llamar("GET", "ig_audio", q, api=f"https://graph.facebook.com/{v}")))
+    paso("buscar original_sound", lambda: resumen(llamar("GET", "ig_audio", {**q, "audio_type": "original_sound"})))
+
+    def con_token_de_pagina():
+        pagina = llamar("GET", diag["pagina"], {"fields": "access_token"}).get("access_token")
+        if not pagina:
+            return {"ERROR": "La página no devolvió token"}
+        return resumen(llamar("GET", "ig_audio", q, token=pagina))
+
+    paso("buscar con token de pagina", con_token_de_pagina)
+    paso("datos del audio conocido", lambda: llamar("GET", diag["audio_id"], {"user_id": IG_ID}))
+
+    def contenedor():
+        url = url_publica(diag["archivo"], git("rev-parse", "HEAD"))
+        revisar_url(url)
+        c = llamar("POST", f"{IG_ID}/media", {
+            "media_type": "REELS", "video_url": url, "caption": "prueba sin publicar",
+            "audio_configuration": json.dumps({"audio_id": diag["audio_id"], "audio_volume": 25, "video_volume": 0}),
+        })["id"]
+        for _ in range(30):
+            e = llamar("GET", c, {"fields": "status_code,status"})
+            if e.get("status_code") in ("FINISHED", "ERROR", "EXPIRED"):
+                break
+            time.sleep(10)
+        return {k: e.get(k) for k in ("status_code", "status")}
+
+    paso("contenedor con musica (NO se publica)", contenedor)
+
+
 def comprobar():
     pedido = COLA / "comprobar.json"
     busquedas = json.loads(pedido.read_text(encoding="utf-8")).get("busquedas", [])
@@ -209,7 +243,7 @@ def comprobar():
     def paso(nombre, funcion):
         try:
             salida[nombre] = funcion()
-        except (ErrorMeta, KeyError) as e:
+        except (ErrorMeta, KeyError, urllib.error.URLError) as e:
             salida[nombre] = {"ERROR": str(e)}
 
     paso("cuenta", lambda: llamar("GET", IG_ID, {"fields": "username,media_count"}))
@@ -219,6 +253,9 @@ def comprobar():
     for b in busquedas:
         paso(f"musica: {b}", lambda b=b: buscar_audio(b)[:5])
     paso("tendencia", lambda: llamar("GET", "ig_audio", {"audio_type": "music", "user_id": IG_ID}).get("data", [])[:5])
+    diag = json.loads(pedido.read_text(encoding="utf-8")).get("diagnostico")
+    if diag:
+        diagnostico(diag, paso)
     (COLA / "estado").mkdir(parents=True, exist_ok=True)
     (COLA / "estado" / "ultima_comprobacion.json").write_text(
         json.dumps(salida, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
