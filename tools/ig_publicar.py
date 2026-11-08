@@ -37,6 +37,7 @@ RAIZ = pathlib.Path(__file__).resolve().parent.parent
 COLA = RAIZ / "programados"
 MAX_ATRASO = dt.timedelta(hours=3)  # si GitHub se atrasa más que esto, no publica a deshora
 ESPERA_MAX = 600
+INTENTOS = 3
 TIPOS = {"REEL": "REELS", "STORY": "STORIES", "POST": None}
 VIDEO = (".mp4", ".mov")
 
@@ -45,10 +46,10 @@ class ErrorMeta(Exception):
     pass
 
 
-def llamar(metodo, ruta, datos=None, token=None, api=API):
+def llamar(metodo, ruta, datos=None):
     """Llama a la API. El token va en la cabecera para que nunca salga en una URL o un log."""
-    token = token or os.environ["IG_TOKEN"].strip()
-    url = f"{api}/{ruta}"
+    token = os.environ["IG_TOKEN"].strip()
+    url = f"{API}/{ruta}"
     cuerpo = None
     if metodo == "GET" and datos:
         url += "?" + urllib.parse.urlencode(datos)
@@ -120,6 +121,10 @@ def id_audio(item):
     return str(item.get("audio_id") or item.get("id") or "")
 
 
+def corto(item):
+    return {k: item.get(k) for k in ("audio_id", "title", "display_artist")}
+
+
 def elegir_audio(pub):
     if pub.get("audio_id"):
         return str(pub["audio_id"]), None
@@ -161,22 +166,33 @@ def armar_contenedor(pub, url):
     return datos, extra
 
 
-def publicar(pub, sha):
-    url = url_publica(pub["archivo"], sha)
-    revisar_url(url)
-    datos, extra = armar_contenedor(pub, url)
-    contenedor = llamar("POST", f"{IG_ID}/media", datos)["id"]
+def esperar(contenedor):
+    """True si quedó listo; False si Instagram falló al procesarlo (a veces pasa una vez y a la siguiente no)."""
     inicio = time.time()
     while True:
         estado = llamar("GET", contenedor, {"fields": "status_code,status"})
         codigo = estado.get("status_code")
         if codigo == "FINISHED":
-            break
+            return True
         if codigo in ("ERROR", "EXPIRED"):
-            raise ErrorMeta(f"Instagram no pudo procesar el archivo: {estado.get('status')}")
+            print(f"Contenedor falló: {estado.get('status')}")
+            return False
         if time.time() - inicio > ESPERA_MAX:
             raise ErrorMeta(f"Instagram tardó más de {ESPERA_MAX // 60} min procesando (estado {codigo})")
         time.sleep(10)
+
+
+def publicar(pub, sha):
+    url = url_publica(pub["archivo"], sha)
+    revisar_url(url)
+    datos, extra = armar_contenedor(pub, url)
+    for intento in range(INTENTOS):
+        contenedor = llamar("POST", f"{IG_ID}/media", datos)["id"]
+        if esperar(contenedor):
+            break
+        if intento == INTENTOS - 1:
+            raise ErrorMeta(f"Instagram no pudo procesar el archivo tras {INTENTOS} intentos")
+        time.sleep(60)
     media = llamar("POST", f"{IG_ID}/media_publish", {"creation_id": contenedor})["id"]
     enlace = None
     try:
@@ -207,44 +223,6 @@ def mover(ruta, carpeta, pub, **resultado):
     return nueva
 
 
-def diagnostico(diag, paso):
-    """Averigua por qué no aparece música. Nada de esto publica: un contenedor sin publicar caduca solo."""
-    q = {"audio_type": "music", "user_id": IG_ID, "search_query": diag["busqueda"]}
-    resumen = lambda r: {"n": len(lista_audio(r)), "primero": (lista_audio(r) or [None])[0], "claves": sorted(r)}
-    for v in ("v23.0", "v24.0", "v25.0"):
-        paso(f"buscar {v}", lambda v=v: resumen(llamar("GET", "ig_audio", q, api=f"https://graph.facebook.com/{v}")))
-    paso("buscar original_sound", lambda: resumen(llamar("GET", "ig_audio", {**q, "audio_type": "original_sound"})))
-
-    def con_token_de_pagina():
-        pagina = llamar("GET", diag["pagina"], {"fields": "access_token"}).get("access_token")
-        if not pagina:
-            return {"ERROR": "La página no devolvió token"}
-        return resumen(llamar("GET", "ig_audio", q, token=pagina))
-
-    paso("buscar con token de pagina", con_token_de_pagina)
-    paso("datos del audio conocido", lambda: llamar("GET", diag["audio_id"], {"user_id": IG_ID}))
-
-    def contenedor(audio):
-        url = url_publica(diag["archivo"], git("rev-parse", "HEAD"))
-        revisar_url(url)
-        datos = {"media_type": "REELS", "video_url": url, "caption": "prueba sin publicar"}
-        if audio:
-            datos["audio_configuration"] = json.dumps({"audio_id": audio, "audio_volume": 25, "video_volume": 0})
-        c = llamar("POST", f"{IG_ID}/media", datos)["id"]
-        for _ in range(30):
-            e = llamar("GET", c, {"fields": "status_code,status"})
-            if e.get("status_code") in ("FINISHED", "ERROR", "EXPIRED"):
-                break
-            time.sleep(10)
-        return {k: e.get(k) for k in ("status_code", "status")}
-
-    paso("contenedor sin musica (NO se publica)", lambda: contenedor(None))
-    paso("contenedor con musica (NO se publica)", lambda: contenedor(diag["audio_id"]))
-    otro = lista_audio(llamar("GET", "ig_audio", q))
-    if otro:
-        paso("contenedor con musica buscada (NO se publica)", lambda: contenedor(id_audio(otro[0])))
-
-
 def comprobar():
     pedido = COLA / "comprobar.json"
     busquedas = json.loads(pedido.read_text(encoding="utf-8")).get("busquedas", [])
@@ -261,11 +239,9 @@ def comprobar():
                               if p.get("status") == "granted"])
     paso("cupo_24h", lambda: llamar("GET", f"{IG_ID}/content_publishing_limit", {"fields": "config,quota_usage"}))
     for b in busquedas:
-        paso(f"musica: {b}", lambda b=b: buscar_audio(b)[:5])
-    paso("tendencia", lambda: lista_audio(llamar("GET", "ig_audio", {"audio_type": "music", "user_id": IG_ID}))[:5])
-    diag = json.loads(pedido.read_text(encoding="utf-8")).get("diagnostico")
-    if diag:
-        diagnostico(diag, paso)
+        paso(f"musica: {b}", lambda b=b: [corto(i) for i in buscar_audio(b)[:5]])
+    paso("tendencia", lambda: [corto(i) for i in lista_audio(
+        llamar("GET", "ig_audio", {"audio_type": "music", "user_id": IG_ID}))[:5]])
     (COLA / "estado").mkdir(parents=True, exist_ok=True)
     (COLA / "estado" / "ultima_comprobacion.json").write_text(
         json.dumps(salida, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

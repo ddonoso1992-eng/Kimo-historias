@@ -51,14 +51,21 @@ El 6-nov salió dos veces el reel de la pulsera Mano de Fátima (dos tandas lo p
 - En cada tarea "Publicar historias KIMO <F>", las historias de IG van con `mcp__Windsor_ai__execute_action` (cárgala con ToolSearch): connector `instagram`, action `create_story`, account `17841467127423464` (@kimo.ecu), params `{"image_url": "<URL>"}` o `{"video_url": "<URL>"}`. Publica al instante: la tarea ya corre a las 10:52, así que una llamada tras otra, en orden.
 - URLs: imágenes con raw.githubusercontent.com. Video con jsDelivr fijado al commit, porque raw lo sirve como octet-stream: `https://cdn.jsdelivr.net/gh/ddonoso1992-eng/Kimo-historias@<sha completo del commit que subió el video>/historias/F_video.mp4`. Los links de Drive no sirven para Windsor.
 - Una sola llamada por pieza, sin reintentos. Si una falla, para las que siguen y avisa a Diego con el error exacto. No uses Metricool de respaldo para historias sin que él lo diga.
-- Reels y TikTok siguen en Metricool (los reels llevan música y Windsor no la pone), y cuentan para el tope de 20. Antes de programar en Metricool cuenta los publicados del mes con `getScheduledPosts` (cada red suma aparte); si ya van 20, no programes y avisa a Diego.
+- TikTok sigue en Metricool y cuenta para el tope de 20. Antes de programar en Metricool cuenta los publicados del mes con `getScheduledPosts` (cada red suma aparte); si ya van 20, no programes y avisa a Diego.
+
+## Reels de Instagram con el publicador propio, no con Metricool (pedido de Diego, 2026-11-08)
+**Gratis y sin tope.** El workflow "Publicar en Instagram" corre cada 10 min y publica lo que esté en `programados/` cuando llega su hora (`tools/ig_publicar.py` explica el formato). Usa el secreto `IG_TOKEN` (KIMO bot, app kimo ventas).
+- Para programar un reel: crea `programados/F_reel.json` con `fecha`, `tipo: "REEL"`, `archivo` (ruta en el repo), `texto`, `audio_id` o `cancion`, `volumen_musica`, `volumen_video`, y haz push. Sale con unos minutos de atraso.
+- Para buscar la canción sin publicar: sube `programados/comprobar.json` con `{"busquedas": ["título"]}` y lee `programados/estado/ultima_comprobacion.json` (el campo `cuando` debe ser nuevo). Usa el `audio_id` que coincida; nunca publiques mudo.
+- Anti-duplicados: si `F_reel.json` ya existe en `programados/` o en `en_proceso/`, `publicados/` o `errores/`, no crees otro; para cambiarlo edita el archivo mientras siga pendiente. No programes el mismo reel en Metricool.
+- Resultado: `programados/publicados/` trae el enlace; `programados/errores/` trae el error exacto. No reintenta solo una publicación fallida.
 
 ## Reels con voz (= voz + música)
 Si Diego aprueba "con voz", el reel lleva **voz Y música**, nunca solo una de las dos:
-- Se programa SOLO el archivo `*_voz.mp4`, con `audioConfiguration` de la canción en tendencia,
-  `audioVolume: 25` (música de fondo) y `videoVolume: 100` (la voz).
+- Se programa SOLO el archivo `*_voz.mp4`, con la canción en tendencia,
+  `volumen_musica: 25` (música de fondo) y `volumen_video: 100` (la voz).
 - Antes de programar, confirma con `ffprobe -show_streams` que el archivo tiene pista de audio.
-- Si Metricool no acepta la canción, NO lo publiques solo con voz: déjalo sin programar y avisa a Diego.
+- Si Instagram no tiene la canción, NO lo publiques solo con voz: déjalo sin programar y avisa a Diego.
 
 ## Estilo editorial para TODAS las historias (pedido de Diego, 2026-11-07)
 **PRIORIDAD:** esta sección MANDA sobre cualquier instrucción de diseño del prompt de la tarea "Kimo tareas para 2 dias" (pasos 3 y 4: plantillas kimo_historias.py producto/cta, botón de WhatsApp, "¡Última unidad!", alternar foto realista/fantasía). Lo demás del prompt (fecha objetivo, temas por día, GitHub, Drive, aprobación, publicación con Metricool) sigue igual.
