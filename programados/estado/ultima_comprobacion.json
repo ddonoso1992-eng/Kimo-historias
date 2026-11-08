@@ -1,0 +1,91 @@
+{
+  "cuando": "2026-11-08T18:34:35+00:00",
+  "cuenta": {
+    "id": "17841467127423464",
+    "media_count": 227,
+    "username": "kimo.ecu"
+  },
+  "permisos": [
+    "pages_show_list",
+    "ads_management",
+    "ads_read",
+    "business_management",
+    "instagram_basic",
+    "instagram_manage_comments",
+    "instagram_manage_insights",
+    "instagram_content_publish",
+    "whatsapp_business_management",
+    "instagram_manage_messages",
+    "pages_read_engagement",
+    "pages_manage_ads",
+    "whatsapp_business_messaging",
+    "instagram_shopping_tag_products",
+    "instagram_branded_content_brand",
+    "instagram_branded_content_ads_brand",
+    "whatsapp_business_manage_events",
+    "instagram_manage_contents",
+    "public_profile"
+  ],
+  "cupo_24h": {
+    "data": [
+      {
+        "quota_usage": 4,
+        "config": {
+          "quota_total": 100,
+          "quota_duration": 86400
+        }
+      }
+    ]
+  },
+  "musica: Bad Bunny": [],
+  "tendencia": [],
+  "buscar v23.0": {
+    "n": 0,
+    "primero": null,
+    "claves": [
+      "audio"
+    ]
+  },
+  "buscar v24.0": {
+    "n": 0,
+    "primero": null,
+    "claves": [
+      "audio"
+    ]
+  },
+  "buscar v25.0": {
+    "n": 0,
+    "primero": null,
+    "claves": [
+      "audio"
+    ]
+  },
+  "buscar original_sound": {
+    "n": 0,
+    "primero": null,
+    "claves": [
+      "audio"
+    ]
+  },
+  "buscar con token de pagina": {
+    "n": 0,
+    "primero": null,
+    "claves": [
+      "audio"
+    ]
+  },
+  "datos del audio conocido": {
+    "audio_id": "2385329925545043",
+    "duration_in_ms": 225834,
+    "audio_type": "music",
+    "title": "BbY WOW",
+    "cover_artwork_thumbnail_uri": null,
+    "display_artist": "KAROL G, Judeline, rusowsky",
+    "download_url": null,
+    "on_platform_audio_preview_link": "https://www.instagram.com/reels/audio/2385329925545043/"
+  },
+  "contenedor con musica (NO se publica)": {
+    "status_code": "ERROR",
+    "status": "Error: Media upload has failed with error code 2207077"
+  }
+}
