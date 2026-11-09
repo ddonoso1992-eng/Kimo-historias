@@ -50,7 +50,7 @@ El 6-nov salió dos veces el reel de la pulsera Mano de Fátima (dos tandas lo p
 **PRIORIDAD:** esta sección MANDA sobre cualquier prompt que diga publicar historias con Metricool. Probado el 2026-11-08: gratis y sin tope de Metricool.
 - En cada tarea "Publicar historias KIMO <F>", después de revisar el stock, crea un archivo por pieza en `programados/`: `F_story_1.json`, `F_story_2.json`, `F_story_3.json`... (se publican en ese orden), con `{"fecha": "<hora actual, AAAA-MM-DDTHH:MM:00-05:00>", "tipo": "STORY", "archivo": "historias/<archivo>"}`. Un solo commit y push: eso dispara el workflow "Publicar en Instagram".
 - Anti-duplicados: si ese archivo ya existe en `programados/`, `en_proceso/`, `publicados/` o `errores/`, no crees otro.
-- Espera con `git pull` cada 30 s, hasta 15 min, a que todos estén en `programados/publicados/` (trae el enlace) o `programados/errores/` (trae el error). No crees archivos nuevos para reintentar sin que Diego lo diga.
+- Espera con `git pull` cada 30 s, hasta 15 min, a que todos estén en `programados/publicados/` (trae el enlace) o `programados/errores/` (trae el error). Si una pieza cae en `errores/`, reintenta UNA sola vez (autorizado por Diego, 2026-11-09): crea `F_story_N_reintento.json` solo después de ver el error, y solo si no existe ya un `_reintento` de esa pieza. Si el reintento también falla, no hagas más y avisa.
 - Respaldo solo si no hay acceso de escritura a GitHub: Windsor (`mcp__Windsor_ai__execute_action`, connector `instagram`, action `create_story`, account `17841467127423464`). Las imágenes con raw.githubusercontent.com y el video con `https://cdn.jsdelivr.net/gh/ddonoso1992-eng/Kimo-historias@main/historias/F_video.mp4`.
 
 ## TikTok sigue en Metricool
