@@ -1,0 +1,25 @@
+{
+  "imagen": "fotos_ia/2026-11-11_charm-perrito-corazon_persona_v2.jpg",
+  "salida": "2026-11-11_reel",
+  "clips": [
+    {
+      "prompt": "Dreamy cinematic fantasy jewelry commercial. Camera slowly pushes in toward her wrist as the tiny white puppy charm with red hearts on the gold square-link Italian bracelet begins to sway and glow softly. Tiny golden sparkles and floating pink neon light particles rise around her wrist, the warm cafe room gradually melts into a soft dreamlike haze of glowing bokeh and magical stardust, shimmering light glints travelling across each polished gold link. Her hand moves gently and naturally, realistic skin, shallow depth of field, enchanted fairytale mood, the product keeps exactly the same design.",
+      "duracion": 10,
+      "imagen": "fotos_ia/2026-11-11_charm-perrito-corazon_persona_v2.jpg",
+      "request_id": "01a1bef1-6669-7d0c-abcb-66e985265c3d"
+    },
+    {
+      "prompt": "Magical neon dream sequence, cinematic slow orbit around her wrist. She slowly raises and turns her wrist to proudly show the gold square-link Italian bracelet, and the small white puppy charm with red hearts floats upward weightlessly and twinkles as if under a spell, surrounded by swirling glittering stardust and pink and violet neon light trails. Glowing floating hearts drift through the air in the blurred background, sparkling lens flares sweep over the gold links, moody dreamy night glow, natural hand motion, realistic skin, the product keeps exactly the same design.",
+      "duracion": 10,
+      "imagen": "fotos_ia/2026-11-11_charm-perrito-corazon_persona_v2.jpg",
+      "request_id": "01a1bef1-6872-7a59-a73b-610d63417f92"
+    }
+  ],
+  "textos": {
+    "gancho": "Magia en tu muñeca",
+    "precio": "Pulsera dorada $16\nCharm perrito $6",
+    "cierre": "Envíos a todo Ecuador",
+    "whatsapp": "Pide por WhatsApp 098 325 1505",
+    "precio_y": 0.7
+  }
+}
