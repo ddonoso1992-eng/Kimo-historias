@@ -38,12 +38,16 @@ COLA = RAIZ / "programados"
 MAX_ATRASO = dt.timedelta(hours=3)  # si GitHub se atrasa más que esto, no publica a deshora
 ESPERA_MAX = 600
 INTENTOS = 3
+NO_ENCONTRADO = 2207006  # Instagram a veces no "ve" todavía un contenedor recién creado
+ESPERA_NO_ENCONTRADO = 90
 TIPOS = {"REEL": "REELS", "STORY": "STORIES", "POST": None}
 VIDEO = (".mp4", ".mov")
 
 
 class ErrorMeta(Exception):
-    pass
+    def __init__(self, mensaje, subcode=None):
+        super().__init__(mensaje)
+        self.subcode = subcode
 
 
 def llamar(metodo, ruta, datos=None):
@@ -65,7 +69,8 @@ def llamar(metodo, ruta, datos=None):
         except ValueError:
             err = {}
         msg = err.get("error_user_msg") or err.get("message") or f"HTTP {e.code}"
-        raise ErrorMeta(f"{msg} (code {err.get('code')}, subcode {err.get('error_subcode')})") from None
+        raise ErrorMeta(f"{msg} (code {err.get('code')}, subcode {err.get('error_subcode')})",
+                        subcode=err.get("error_subcode")) from None
 
 
 def git(*args):
@@ -89,13 +94,18 @@ def guardar(mensaje):
             time.sleep(5 * (intento + 1))
 
 
-def url_publica(archivo, sha):
+def urls_publicas(archivo, sha):
+    """URLs posibles del archivo, en orden de preferencia."""
     if archivo.startswith("https://"):
-        return archivo
+        return [archivo]
     if not (RAIZ / archivo).is_file():
         raise ErrorMeta(f"No existe en el repo: {archivo}")
     # raw.githubusercontent sirve los mp4 como octet-stream; jsDelivr con el commit los sirve bien.
-    return f"https://cdn.jsdelivr.net/gh/{REPO}@{sha}/{archivo}"
+    urls = [f"https://cdn.jsdelivr.net/gh/{REPO}@{sha}/{archivo}"]
+    # jsDelivr puede dar 403 (el repo pasa su límite de 50 MB): las imágenes tienen respaldo en raw.
+    if not archivo.lower().endswith(VIDEO):
+        urls.append(f"https://raw.githubusercontent.com/{REPO}/{sha}/{archivo}")
+    return urls
 
 
 def revisar_url(url):
@@ -104,6 +114,22 @@ def revisar_url(url):
         tipo = r.headers.get("content-type", "")
     if not tipo.startswith(("video/", "image/")):
         raise ErrorMeta(f"El archivo se sirve como {tipo}, Instagram no lo aceptaría: {url}")
+
+
+def elegir_url(urls):
+    """Devuelve la primera URL que responde bien, con 3 intentos por URL."""
+    problema = None
+    for url in urls:
+        for intento in range(3):
+            try:
+                revisar_url(url)
+                return url
+            except urllib.error.URLError as e:
+                problema = f"{url.split('/')[2]}: {e}"
+                print(f"No se pudo revisar el archivo ({problema}), intento {intento + 1}")
+                if intento < 2:
+                    time.sleep(15)
+    raise ErrorMeta(f"El archivo no se pudo descargar ({problema})")
 
 
 def buscar_audio(busqueda, tipo="music"):
@@ -170,7 +196,13 @@ def esperar(contenedor):
     """True si quedó listo; False si Instagram falló al procesarlo (a veces pasa una vez y a la siguiente no)."""
     inicio = time.time()
     while True:
-        estado = llamar("GET", contenedor, {"fields": "status_code,status"})
+        try:
+            estado = llamar("GET", contenedor, {"fields": "status_code,status"})
+        except ErrorMeta as e:
+            if e.subcode != NO_ENCONTRADO or time.time() - inicio > ESPERA_NO_ENCONTRADO:
+                raise
+            time.sleep(10)
+            continue
         codigo = estado.get("status_code")
         if codigo == "FINISHED":
             return True
@@ -182,9 +214,20 @@ def esperar(contenedor):
         time.sleep(10)
 
 
+def confirmar_publicacion(contenedor):
+    """Un contenedor solo se puede publicar una vez, así que reintentar no duplica."""
+    inicio = time.time()
+    while True:
+        try:
+            return llamar("POST", f"{IG_ID}/media_publish", {"creation_id": contenedor})["id"]
+        except ErrorMeta as e:
+            if e.subcode != NO_ENCONTRADO or time.time() - inicio > ESPERA_NO_ENCONTRADO:
+                raise
+            time.sleep(15)
+
+
 def publicar(pub, sha):
-    url = url_publica(pub["archivo"], sha)
-    revisar_url(url)
+    url = elegir_url(urls_publicas(pub["archivo"], sha))
     datos, extra = armar_contenedor(pub, url)
     for intento in range(INTENTOS):
         contenedor = llamar("POST", f"{IG_ID}/media", datos)["id"]
@@ -193,7 +236,7 @@ def publicar(pub, sha):
         if intento == INTENTOS - 1:
             raise ErrorMeta(f"Instagram no pudo procesar el archivo tras {INTENTOS} intentos")
         time.sleep(60)
-    media = llamar("POST", f"{IG_ID}/media_publish", {"creation_id": contenedor})["id"]
+    media = confirmar_publicacion(contenedor)
     enlace = None
     try:
         enlace = llamar("GET", media, {"fields": "permalink"}).get("permalink")
