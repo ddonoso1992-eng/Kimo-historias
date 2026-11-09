@@ -1,5 +1,5 @@
 {
-  "cuando": "2026-11-09T06:14:54+00:00",
+  "cuando": "2026-11-09T19:29:02+00:00",
   "cuenta": {
     "id": "17841467127423464",
     "media_count": 227,
@@ -29,7 +29,7 @@
   "cupo_24h": {
     "data": [
       {
-        "quota_usage": 6,
+        "quota_usage": 3,
         "config": {
           "quota_total": 100,
           "quota_duration": 86400
@@ -37,98 +37,7 @@
       }
     ]
   },
-  "musica: Dame Hombro": [
-    {
-      "audio_id": "878191945283147",
-      "title": "Dame Hombro",
-      "display_artist": "Bulin 47, Kevin Wai, Breyco En Producidera"
-    },
-    {
-      "audio_id": "477214701519095",
-      "title": "Dirty (Reels Sound - Listicle)",
-      "display_artist": "Tony Dark Eyes"
-    },
-    {
-      "audio_id": "1586769505565154",
-      "title": "Latina",
-      "display_artist": "Tony Dark Eyes"
-    },
-    {
-      "audio_id": "899249715012511",
-      "title": "Reggaeton Chill Pill",
-      "display_artist": "Last Jerónimo"
-    },
-    {
-      "audio_id": "1314249549355763",
-      "title": "Señorita",
-      "display_artist": "Ecklectic Music"
-    }
-  ],
-  "musica: BbY WOW": [
-    {
-      "audio_id": "2385329925545043",
-      "title": "BbY WOW",
-      "display_artist": "KAROL G, Judeline, rusowsky"
-    },
-    {
-      "audio_id": "1256638451637432",
-      "title": "Beautiful Life",
-      "display_artist": "CALIDAD"
-    },
-    {
-      "audio_id": "959794905484673",
-      "title": "Slow Down (feat. Dawson March)",
-      "display_artist": "The K Club"
-    },
-    {
-      "audio_id": "1282127816171736",
-      "title": "Dreaming You (Reels Sound - Reaction)",
-      "display_artist": "Last Jerónimo"
-    },
-    {
-      "audio_id": "1624129158484812",
-      "title": "Wow",
-      "display_artist": "Giulio Cercato"
-    }
-  ],
-  "musica: DtMF": [
-    {
-      "audio_id": "1343263046504085",
-      "title": "Menguante",
-      "display_artist": "Reijy"
-    },
-    {
-      "audio_id": "4487975741418395",
-      "title": "Adore You (Instrumental)",
-      "display_artist": "Giulio Cercato"
-    },
-    {
-      "audio_id": "2878320389059718",
-      "title": "Mi Tumbao",
-      "display_artist": "El Septeto Santiaguero"
-    },
-    {
-      "audio_id": "2314777905633983",
-      "title": "Make It Right (Instrumental)",
-      "display_artist": "Tony Dark Eyes"
-    },
-    {
-      "audio_id": "1245044902665736",
-      "title": "Reflection (feat. Plum Soul)",
-      "display_artist": "Jumbo"
-    }
-  ],
   "tendencia": [
-    {
-      "audio_id": "242659649830381",
-      "title": "November Rain",
-      "display_artist": "Guns N' Roses"
-    },
-    {
-      "audio_id": "203193731254034",
-      "title": "All I Want For Christmas Is You (Magical Christmas Mix)",
-      "display_artist": "Mariah Carey"
-    },
     {
       "audio_id": "25373412465646198",
       "title": "Love Me",
@@ -140,9 +49,19 @@
       "display_artist": "Tate McRae"
     },
     {
+      "audio_id": "203193731254034",
+      "title": "All I Want For Christmas Is You (Magical Christmas Mix)",
+      "display_artist": "Mariah Carey"
+    },
+    {
       "audio_id": "3771442676501811",
       "title": "Training Season (Live from the Royal Albert Hall)",
       "display_artist": "Dua Lipa"
+    },
+    {
+      "audio_id": "181811735874918",
+      "title": "Last Christmas (Pudding Mix)",
+      "display_artist": "Wham!"
     }
   ]
 }
