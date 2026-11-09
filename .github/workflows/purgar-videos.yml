@@ -1,0 +1,35 @@
+name: Purgar videos viejos
+
+# Cada domingo a las 03:17 de Quito pasa los videos viejos a Releases y los saca del repo.
+# Al cambiar este archivo solo corre una prueba, sin borrar videos.
+on:
+  schedule:
+    - cron: "17 8 * * 0"
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/purgar-videos.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# El mismo grupo del publicador, para no pisarse al subir cambios.
+concurrency:
+  group: publicar-instagram
+  cancel-in-progress: false
+
+jobs:
+  purgar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Purgar
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: python3 tools/purgar_videos.py ${{ github.event_name == 'push' && '--prueba' || '' }}

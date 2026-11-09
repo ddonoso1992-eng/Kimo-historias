@@ -53,6 +53,9 @@ El 6-nov salió dos veces el reel de la pulsera Mano de Fátima (dos tandas lo p
 - Espera con `git pull` cada 30 s, hasta 15 min, a que todos estén en `programados/publicados/` (trae el enlace) o `programados/errores/` (trae el error). Si una pieza cae en `errores/`, reintenta UNA sola vez (autorizado por Diego, 2026-11-09): crea `F_story_N_reintento.json` solo después de ver el error, y solo si no existe ya un `_reintento` de esa pieza. Si el reintento también falla, no hagas más y avisa.
 - Respaldo solo si no hay acceso de escritura a GitHub: Windsor (`mcp__Windsor_ai__execute_action`, connector `instagram`, action `create_story`, account `17841467127423464`). Las imágenes con raw.githubusercontent.com y el video con `https://cdn.jsdelivr.net/gh/ddonoso1992-eng/Kimo-historias@main/historias/F_video.mp4`.
 
+## Purga semanal de videos (pedido de Diego, 2026-11-09)
+Cada domingo, `tools/purgar_videos.py` pasa a Releases (`respaldo-videos`) los videos con más de 7 días y los saca del repo, para no pasar los 50 MB de jsDelivr. No toca lo programado ni lo que no tenga fecha al inicio del nombre: nombra siempre los videos `AAAA-MM-DD_...`. No vuelvas a subir al repo videos ya purgados.
+
 ## TikTok sigue en Metricool
 Cuenta para el tope de 20 publicaciones al mes del plan gratis. Antes de programar, cuenta los publicados del mes con `getScheduledPosts` (cada publicación por red suma una); si ya van 20, no programes y avisa a Diego.
 
