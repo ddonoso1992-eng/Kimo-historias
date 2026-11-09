@@ -1,0 +1,121 @@
+{
+  "cuando": "2026-11-09T06:14:18+00:00",
+  "cuenta": {
+    "id": "17841467127423464",
+    "media_count": 227,
+    "username": "kimo.ecu"
+  },
+  "permisos": [
+    "pages_show_list",
+    "ads_management",
+    "ads_read",
+    "business_management",
+    "instagram_basic",
+    "instagram_manage_comments",
+    "instagram_manage_insights",
+    "instagram_content_publish",
+    "whatsapp_business_management",
+    "instagram_manage_messages",
+    "pages_read_engagement",
+    "pages_manage_ads",
+    "whatsapp_business_messaging",
+    "instagram_shopping_tag_products",
+    "instagram_branded_content_brand",
+    "instagram_branded_content_ads_brand",
+    "whatsapp_business_manage_events",
+    "instagram_manage_contents",
+    "public_profile"
+  ],
+  "cupo_24h": {
+    "data": [
+      {
+        "quota_usage": 6,
+        "config": {
+          "quota_total": 100,
+          "quota_duration": 86400
+        }
+      }
+    ]
+  },
+  "musica: Dame Hombro Bulin 47": [
+    {
+      "audio_id": "1586769505565154",
+      "title": "Latina",
+      "display_artist": "Tony Dark Eyes"
+    },
+    {
+      "audio_id": "583674661052146",
+      "title": "Latina (Instrumental)",
+      "display_artist": "Tony Dark Eyes"
+    },
+    {
+      "audio_id": "2797624833755821",
+      "title": "Shake It (feat. Drumboi)",
+      "display_artist": "Tony Dark Eyes"
+    },
+    {
+      "audio_id": "838163414001521",
+      "title": "Mami",
+      "display_artist": "Chela Rivas"
+    },
+    {
+      "audio_id": "100156566359687",
+      "title": "I Like It",
+      "display_artist": "Tony Dark Eyes"
+    }
+  ],
+  "musica: BbY WOW Karol G": [
+    {
+      "audio_id": "1256638451637432",
+      "title": "Beautiful Life",
+      "display_artist": "CALIDAD"
+    },
+    {
+      "audio_id": "1624129158484812",
+      "title": "Wow",
+      "display_artist": "Giulio Cercato"
+    },
+    {
+      "audio_id": "634177839298356",
+      "title": "Rose Petal Love",
+      "display_artist": "Shuba"
+    },
+    {
+      "audio_id": "513299068230948",
+      "title": "Club Seoul",
+      "display_artist": "Sugartapes"
+    },
+    {
+      "audio_id": "1586769505565154",
+      "title": "Latina",
+      "display_artist": "Tony Dark Eyes"
+    }
+  ],
+  "tendencia": [
+    {
+      "audio_id": "242659649830381",
+      "title": "November Rain",
+      "display_artist": "Guns N' Roses"
+    },
+    {
+      "audio_id": "203193731254034",
+      "title": "All I Want For Christmas Is You (Magical Christmas Mix)",
+      "display_artist": "Mariah Carey"
+    },
+    {
+      "audio_id": "25373412465646198",
+      "title": "Love Me",
+      "display_artist": "JMSN"
+    },
+    {
+      "audio_id": "1501269788724597",
+      "title": "Housewife",
+      "display_artist": "Tate McRae"
+    },
+    {
+      "audio_id": "3771442676501811",
+      "title": "Training Season (Live from the Royal Albert Hall)",
+      "display_artist": "Dua Lipa"
+    }
+  ]
+}
