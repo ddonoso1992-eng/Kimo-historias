@@ -1,0 +1,21 @@
+{
+  "imagen": "fotos_ia/2026-11-12_lego-carro-rojo_persona.jpg",
+  "salida": "2026-11-13_reel",
+  "clips": [
+    {
+      "prompt": "Premium realistic lifestyle commercial, Friday evening vibe. Camera starts low at table level and glides smoothly toward the red brick-built sports car on the wooden desk while her hands snap the final rear wing piece into place with a satisfied gesture. Warm golden-hour sunlight streams through the window, crisp reflections glint across the glossy red panels and chrome wheels, shallow depth of field, she gives a proud little push so the car rolls a few centimeters forward, aspirational cozy creative-hobby mood, realistic skin and natural hand motion, the product keeps exactly the same design.",
+      "duracion": 10
+    },
+    {
+      "prompt": "Dynamic realistic social-media reel. Smooth handheld orbit around the red brick-built sports car as she lifts it with both hands and turns it proudly toward the camera to show off the detailed racing decals, black rear wing and silver rims, then sets it back down on the desk like a trophy. Friends' laughter implied by soft movement in the blurred warm background, golden sunlight flares, sharp focus on the car, energetic yet premium look, natural motion, the product keeps exactly the same design.",
+      "duracion": 10
+    }
+  ],
+  "textos": {
+    "gancho": "Ármalo, presúmelo, disfrútalo",
+    "precio": "Lego Carro Rojo $15",
+    "cierre": "Envíos a todo Ecuador",
+    "whatsapp": "Pide por WhatsApp 098 325 1505",
+    "precio_y": 0.78
+  }
+}
