@@ -65,6 +65,7 @@ Cuenta para el tope de 20 publicaciones al mes del plan gratis. Antes de program
 - Para buscar la canción sin publicar: sube `programados/comprobar.json` con `{"busquedas": ["título"]}` y lee `programados/estado/ultima_comprobacion.json` (el campo `cuando` debe ser nuevo). Usa el `audio_id` que coincida; nunca publiques mudo.
 - Anti-duplicados: si `F_reel.json` ya existe en `programados/` o en `en_proceso/`, `publicados/` o `errores/`, no crees otro; para cambiarlo edita el archivo mientras siga pendiente. No programes el mismo reel en Metricool.
 - Resultado: `programados/publicados/` trae el enlace; `programados/errores/` trae el error exacto. No reintenta solo una publicación fallida.
+- **Despertador obligatorio (pedido de Diego, 2026-11-11):** GitHub retrasa o se salta el cron de cada 10 min (el 11-nov el reel de las 19:00 no salió). Al programar un reel, deja también con `mcp__claude-code-remote__send_later` un recordatorio para F a la hora del reel + 3 min que: haga `git pull`; si `F_reel.json` sigue en `programados/`, lance el workflow con `mcp__github__actions_run_trigger` (method `run_workflow`, owner `ddonoso1992-eng`, repo `kimo-historias`, workflow_id `publicar-instagram.yml`, ref `main`); espere hasta 15 min y avise a Diego con el enlace o el error. Un solo lanzamiento por reel.
 
 ## Reels con voz (= voz + música)
 Si Diego aprueba "con voz", el reel lleva **voz Y música**, nunca solo una de las dos:
