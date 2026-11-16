@@ -2,5 +2,6 @@
   "fecha": "2026-11-16T10:53:00-05:00",
   "tipo": "STORY",
   "archivo": "historias/2026-11-16_video.mp4",
-  "procesado": "2026-11-16T15:55:21+00:00"
+  "error": "The read operation timed out",
+  "procesado": "2026-11-16T15:58:37+00:00"
 }
