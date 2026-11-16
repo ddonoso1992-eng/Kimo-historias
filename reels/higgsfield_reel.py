@@ -6,7 +6,8 @@ Uso: python3 reels/higgsfield_reel.py reels/pedidos/<archivo>.json
 Pedido (JSON):
   imagen   -> foto dentro del repo (ej. fotos_ia/xxx_persona.jpg). Puede ir por clip.
   clips    -> lista de clips; cada uno {"prompt": "...", "duracion": 5|10, "imagen": opcional,
-              "request_id": opcional -> reutiliza un clip ya generado sin volver a pagarlo}
+              "request_id": opcional -> reutiliza un clip ya generado sin volver a pagarlo,
+              "hasta": opcional -> usa solo los primeros N segundos del clip (ej. si al final sale raro)}
               (o "prompt" + "duracion" sueltos para un solo clip)
   salida   -> nombre del video final sin extensión (ej. 2026-11-10_reel)
   textos   -> opcional, textos de venta encima del video (sin emojis; usa \n para 2 líneas):
@@ -204,6 +205,11 @@ def main():
     for i, rid in enumerate(ids):
         destino = f"/tmp/clip_{i}.mp4"
         esperar(rid, destino)
+        hasta = clips[i].get("hasta")  # opcional: usar solo los primeros N segundos del clip
+        if hasta:
+            ff(["-i", destino, "-t", str(float(hasta)), "-an", "-c:v", "libx264", "-preset", "veryfast",
+                "-crf", "18", f"/tmp/clip_{i}_corto.mp4"])
+            destino = f"/tmp/clip_{i}_corto.mp4"
         archivos.append(destino)
     final = f"reels/{pedido['salida']}.mp4"
     if pedido.get("voz"):

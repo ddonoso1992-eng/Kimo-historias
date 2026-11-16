@@ -1,0 +1,26 @@
+{
+  "imagen": "fotos_ia/2026-11-18_peluche-cubo-bubble-tea_persona.jpg",
+  "salida": "2026-11-18_reel",
+  "clips": [
+    {
+      "prompt": "Dreamy cinematic fantasy commercial. Slow push-in toward the cute bubble tea cube plush resting in her cupped hands as tiny golden sparkles and glowing pastel bokeh lights begin to swirl around it like magic dust. Soft pink and lilac neon glow blooms across the cozy bed, little shimmering tapioca-pearl-shaped light orbs float up gently around the plush, she smiles in delight and lifts it slightly toward the camera, warm magical dreamlike atmosphere, shallow depth of field, smooth floating camera, realistic hands, the product keeps exactly the same design.",
+      "duracion": 10,
+      "request_id": "01a1e2fa-cabf-7739-ba73-427ba1bc64c4",
+      "imagen": "fotos_ia/2026-11-18_peluche-cubo-bubble-tea_persona.jpg"
+    },
+    {
+      "prompt": "Magical night-dream fantasy reel. Graceful cinematic orbit around her as she gently squeezes the soft bubble tea cube plush and it bounces back, releasing a burst of glittering stardust and soft neon pink and turquoise light trails that spiral upward. The room dims into a starry dreamy glow with floating fairy lights and soft clouds of shimmer, she hugs the plush to her cheek with a happy smile, enchanting cozy kawaii mood, sharp focus on the plush, natural motion, the product keeps exactly the same design.",
+      "duracion": 10,
+      "request_id": "01a1e2fa-cbe9-704e-9e70-dc6576867ac3",
+      "imagen": "fotos_ia/2026-11-18_peluche-cubo-bubble-tea_persona.jpg",
+      "hasta": 4
+    }
+  ],
+  "textos": {
+    "gancho": "Tu abrazo tamaño bolsillo",
+    "precio": "Peluche Bubble Tea $7",
+    "cierre": "Envíos a todo Ecuador",
+    "whatsapp": "Pide por WhatsApp 098 325 1505",
+    "precio_y": 0.72
+  }
+}
