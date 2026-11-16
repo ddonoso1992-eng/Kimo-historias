@@ -1,8 +1,8 @@
 {
-  "cuando": "2026-11-11T06:10:23+00:00",
+  "cuando": "2026-11-16T06:10:33+00:00",
   "cuenta": {
     "id": "17841467127423464",
-    "media_count": 227,
+    "media_count": 232,
     "username": "kimo.ecu"
   },
   "permisos": [
@@ -37,43 +37,31 @@
       }
     ]
   },
-  "musica: Koko Omar Courtz": [
+  "musica: Dai Dai Shakira": [
     {
-      "audio_id": "795179878894620",
-      "title": "Move Me",
-      "display_artist": "Giulio Cercato"
-    },
-    {
-      "audio_id": "365183439214106",
-      "title": "Jetski",
-      "display_artist": "half.cool"
-    }
-  ],
-  "musica: DTMF Bad Bunny": [
-    {
-      "audio_id": "429334941683697",
-      "title": "La Calle Está Caliente (Instrumental)",
-      "display_artist": "Azabache"
-    },
-    {
-      "audio_id": "1392739449584953",
-      "title": "Sazon",
-      "display_artist": "Lightbox Music"
-    },
-    {
-      "audio_id": "1343263046504085",
-      "title": "Menguante",
-      "display_artist": "Reijy"
-    },
-    {
-      "audio_id": "1929680324347283",
-      "title": "Funk House",
+      "audio_id": "2269336780480551",
+      "title": "Diamond",
       "display_artist": "cloud cover"
     },
     {
-      "audio_id": "937661293232931",
-      "title": "Ven Maria (feat. David Urquidi)",
+      "audio_id": "1722943014680398",
+      "title": "Fiesta",
       "display_artist": "Kolektivo"
+    },
+    {
+      "audio_id": "780506192955608",
+      "title": "I Got You (feat. Makana) ",
+      "display_artist": "Maile"
+    },
+    {
+      "audio_id": "2035951933282109",
+      "title": "Psycho (feat. Kianna)",
+      "display_artist": "Giulio Cercato"
+    },
+    {
+      "audio_id": "714893993467531",
+      "title": "Magic",
+      "display_artist": "Tony Dark Eyes"
     }
   ],
   "tendencia": [
@@ -83,9 +71,14 @@
       "display_artist": "JMSN"
     },
     {
-      "audio_id": "203193731254034",
-      "title": "All I Want For Christmas Is You (Magical Christmas Mix)",
-      "display_artist": "Mariah Carey"
+      "audio_id": "263896829897972",
+      "title": "November",
+      "display_artist": "Past Day"
+    },
+    {
+      "audio_id": "2553186895192637",
+      "title": "What's Up - Deep house",
+      "display_artist": "HARDMAX"
     },
     {
       "audio_id": "1501269788724597",
@@ -96,11 +89,6 @@
       "audio_id": "181811735874918",
       "title": "Last Christmas (Pudding Mix)",
       "display_artist": "Wham!"
-    },
-    {
-      "audio_id": "1050681075992013",
-      "title": "Training Season",
-      "display_artist": "Dj Dark, Mia"
     }
   ]
 }
