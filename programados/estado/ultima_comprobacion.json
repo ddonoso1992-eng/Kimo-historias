@@ -1,5 +1,5 @@
 {
-  "cuando": "2026-11-16T06:11:13+00:00",
+  "cuando": "2026-11-18T06:09:58+00:00",
   "cuenta": {
     "id": "17841467127423464",
     "media_count": 232,
@@ -29,7 +29,7 @@
   "cupo_24h": {
     "data": [
       {
-        "quota_usage": 3,
+        "quota_usage": 4,
         "config": {
           "quota_total": 100,
           "quota_duration": 86400
@@ -37,70 +37,65 @@
       }
     ]
   },
-  "musica: Dai Dai": [
+  "musica: BbY WOW Karol G": [
     {
-      "audio_id": "1198038750753302",
-      "title": "Run It Up",
-      "display_artist": "SugarBeats"
+      "audio_id": "1256638451637432",
+      "title": "Beautiful Life",
+      "display_artist": "CALIDAD"
     },
     {
-      "audio_id": "2269234066500713",
-      "title": "Beautiful, You Are",
-      "display_artist": "Ruby Amanfu"
+      "audio_id": "1020886490555801",
+      "title": "Hive Mind",
+      "display_artist": "Fellow Travelers"
     },
     {
-      "audio_id": "593371403855914",
-      "title": "Go Go Go",
-      "display_artist": "T.H.E."
+      "audio_id": "634177839298356",
+      "title": "Rose Petal Love",
+      "display_artist": "Shuba"
     },
     {
-      "audio_id": "940218566542537",
-      "title": "El Bass",
-      "display_artist": "Chela Rivas"
+      "audio_id": "1577747737223798",
+      "title": "On It",
+      "display_artist": "LAVLO"
     },
     {
-      "audio_id": "794147754260942",
-      "title": "Energy",
-      "display_artist": "Daramola"
+      "audio_id": "881182536218622",
+      "title": "Reel Sexy",
+      "display_artist": "Global Genius"
     }
   ],
-  "musica: APT.": [
+  "musica: DTMF Bad Bunny": [
     {
-      "audio_id": "622819303274042",
-      "title": "Good Time",
-      "display_artist": "Alex Blue"
+      "audio_id": "290874513433916",
+      "title": "Camel",
+      "display_artist": "Trout Recording"
     },
     {
-      "audio_id": "235065218897660",
-      "title": "Spontaneous (Instrumental)",
-      "display_artist": "Alex Blue"
-    },
-    {
-      "audio_id": "2424209777799997",
-      "title": "Moon Night",
-      "display_artist": "Mike Block (Producer)"
-    },
-    {
-      "audio_id": "767902448219806",
-      "title": "Next To You",
+      "audio_id": "4487975741418395",
+      "title": "Adore You (Instrumental)",
       "display_artist": "Giulio Cercato"
     },
     {
-      "audio_id": "2321799517910165",
-      "title": "Spring Time",
-      "display_artist": "Black Box"
+      "audio_id": "429334941683697",
+      "title": "La Calle Está Caliente (Instrumental)",
+      "display_artist": "Azabache"
+    },
+    {
+      "audio_id": "899249715012511",
+      "title": "Reggaeton Chill Pill",
+      "display_artist": "Last Jerónimo"
+    },
+    {
+      "audio_id": "2096130564460614",
+      "title": "Rendezvous",
+      "display_artist": "Flow Loris"
     }
   ],
   "tendencia": [
     {
-      "audio_id": "25373412465646198",
-      "title": "Love Me",
-      "display_artist": "JMSN"
-    },
-    {
-      "audio_id": "263896829897972",
-      "title": "November",
-      "display_artist": "Past Day"
+      "audio_id": "1260124094163995",
+      "title": "Viernes 13",
+      "display_artist": "Marcos Menchaca"
     },
     {
       "audio_id": "2553186895192637",
@@ -108,14 +103,19 @@
       "display_artist": "HARDMAX"
     },
     {
-      "audio_id": "1501269788724597",
-      "title": "Housewife",
-      "display_artist": "Tate McRae"
+      "audio_id": "1258821776191042",
+      "title": "Coming Up Roses",
+      "display_artist": "Harry Styles"
     },
     {
-      "audio_id": "181811735874918",
-      "title": "Last Christmas (Pudding Mix)",
-      "display_artist": "Wham!"
+      "audio_id": "1668904424802271",
+      "title": "lady killers ii",
+      "display_artist": "no/vox, karaokey"
+    },
+    {
+      "audio_id": "1620971306430249",
+      "title": "Flower In A Hurricane (feat. Tame Impala, SZA, King Gizzard & the Lizard Wizard) [From GTAVI: Original Score]",
+      "display_artist": "Justice, Tame Impala, SZA, King Gizzard & the Lizard Wizard"
     }
   ]
 }
