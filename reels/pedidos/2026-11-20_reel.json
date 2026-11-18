@@ -1,0 +1,21 @@
+{
+  "imagen": "fotos_ia/2026-11-20_pulsera-hombre-arbol-de-la-vida-dorado_persona.jpg",
+  "salida": "2026-11-20_reel",
+  "clips": [
+    {
+      "prompt": "Premium realistic lifestyle commercial. Smooth cinematic push-in on the man's wrist wearing the black braided leather bracelet with the gold tree of life medallion; he sets down the coffee cup, adjusts his sleeve with confidence and rotates his wrist so warm golden-hour sunlight catches the gold medallion and clasp with a crisp glint. Gentle handheld camera, shallow depth of field, rich warm tones, aspirational stylish mood, realistic hands and skin, the product keeps exactly the same design.",
+      "duracion": 10
+    },
+    {
+      "prompt": "Realistic night-out reel. Cinematic slow orbit as the man stands up from the cafe table and slips on a dark jacket, ready to go out with friends; city lights and warm neon bokeh glow behind him, he raises his hand to wave at friends off camera and the black braided leather bracelet with the gold tree of life medallion shines on his wrist, proud confident smile, urban Friday night energy, sharp focus on the bracelet, natural motion, the product keeps exactly the same design.",
+      "duracion": 10
+    }
+  ],
+  "textos": {
+    "gancho": "El detalle que lo cambia",
+    "precio": "Pulsera Árbol de la Vida $7",
+    "cierre": "Envíos a todo Ecuador",
+    "whatsapp": "Pide por WhatsApp 098 325 1505",
+    "precio_y": 0.74
+  }
+}
