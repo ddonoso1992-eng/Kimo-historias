@@ -22,19 +22,16 @@ Respaldo probado el 2026-10-13:
 
 No uses proxies de imágenes de terceros.
 
-## Variedad de productos (pedido de Diego, 2026-10-16)
-**PROHIBIDO peluches brainrot (handles "peluches-brainrot-...", Tung Tung, Lirili, Burlaloni, Chimpancini, Boneca Ambalabu,
-Capuccino Assassino, etc.) en todas las artes nuevas desde 2026-10-17 hasta 2026-10-31.** Se puede volver a usarlos desde
-2026-11-01, y entonces como máximo 1 de cada 4 historias y nunca dos el mismo día.
-Prioriza variedad: bisutería, accesorios, útiles/esferos, juegos de mesa, Lego, blind boxes, charms, otros peluches que
-no sean brainrot, etc. En domingo ("Peluches y juguetes") y lunes ("Novedades") busca alternativas que no sean brainrot.
-Excepción ya aprobada: las artes del 2026-10-19 (ya programadas) quedan como están.
-
-## Más juguetes (pedido de Diego, 2026-10-20)
-Ahora hay más juguetes en Shopify: en las próximas artes, revisa el catálogo completo (ordena por fecha de creación, más recientes primero) y prioriza juguetes nuevos, no solo bisutería y papelería.
-
-## Más spinners (pedido de Diego, 2026-10-26)
-La próxima tanda de artes (la siguiente fecha objetivo libre después del 2026-10-29) debe incluir más spinners de fútbol (sets de 2 spinners y sets con cancha, handles "set-football-spinners-..." / "set-completo-con-cancha-football-spinner-..."), con piezas distintas a las ya usadas (ver registro.csv). Sigue siendo obligatorio que la historia 1 y la 2 sean productos distintos.
+## Variedad de productos (pedidos de Diego, 2026-10-16 / 10-20 / 10-26)
+- Peluches brainrot (handles "peluches-brainrot-...", Tung Tung, Lirili, Burlaloni, Chimpancini, Boneca Ambalabu,
+  Capuccino Assassino, etc.): como máximo 1 de cada 4 historias y nunca dos el mismo día. En domingo
+  ("Peluches y juguetes") y lunes ("Novedades") busca primero alternativas que no sean brainrot.
+- Prioriza variedad: bisutería, accesorios, útiles/esferos, juegos de mesa, Lego, blind boxes, charms, spinners,
+  otros peluches que no sean brainrot, etc.
+- Revisa el catálogo completo de Shopify (ordena por fecha de creación, más recientes primero) y prioriza juguetes
+  nuevos, no solo bisutería y papelería. Evita repetir piezas ya usadas (ver registro.csv).
+- Obligatorio: la historia 1 y la 2 son productos distintos.
+- Reglas ya vencidas (prohibición de octubre, tanda de spinners): `docs/historial.md`.
 
 ## Anti-duplicados en Metricool (pedido de Diego, 2026-11-07)
 El 6-nov salió dos veces el reel de la pulsera Mano de Fátima (dos tandas lo programaron). Para cualquier tarea que publique:
