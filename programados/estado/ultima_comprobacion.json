@@ -1,8 +1,8 @@
 {
-  "cuando": "2026-11-18T06:10:47+00:00",
+  "cuando": "2026-11-24T00:15:51+00:00",
   "cuenta": {
     "id": "17841467127423464",
-    "media_count": 232,
+    "media_count": 237,
     "username": "kimo.ecu"
   },
   "permisos": [
@@ -29,7 +29,7 @@
   "cupo_24h": {
     "data": [
       {
-        "quota_usage": 4,
+        "quota_usage": 3,
         "config": {
           "quota_total": 100,
           "quota_duration": 86400
@@ -37,92 +37,40 @@
       }
     ]
   },
-  "musica: BbY WOW": [
+  "musica: Algo tú Shakira Beéle": [
     {
-      "audio_id": "2385329925545043",
-      "title": "BbY WOW",
-      "display_artist": "KAROL G, Judeline, rusowsky"
-    },
-    {
-      "audio_id": "1256638451637432",
-      "title": "Beautiful Life",
-      "display_artist": "CALIDAD"
-    },
-    {
-      "audio_id": "1852688158814799",
-      "title": "Hypnotized (Instrumental)",
-      "display_artist": "Company Money"
-    },
-    {
-      "audio_id": "2662790980841451",
-      "title": "Make Me",
-      "display_artist": "Giulio Cercato"
-    },
-    {
-      "audio_id": "1020886490555801",
-      "title": "Hive Mind",
-      "display_artist": "Fellow Travelers"
+      "audio_id": "375454166415596",
+      "title": "Al Son Del Canalete",
+      "display_artist": "Julian Mendihuaca"
     }
   ],
-  "musica: DTMF": [
-    {
-      "audio_id": "290874513433916",
-      "title": "Camel",
-      "display_artist": "Trout Recording"
-    },
-    {
-      "audio_id": "4487975741418395",
-      "title": "Adore You (Instrumental)",
-      "display_artist": "Giulio Cercato"
-    },
-    {
-      "audio_id": "429334941683697",
-      "title": "La Calle Está Caliente (Instrumental)",
-      "display_artist": "Azabache"
-    },
-    {
-      "audio_id": "899249715012511",
-      "title": "Reggaeton Chill Pill",
-      "display_artist": "Last Jerónimo"
-    },
-    {
-      "audio_id": "1830191324809681",
-      "title": "Photographs",
-      "display_artist": "stereogully"
-    }
-  ],
-  "musica: Matadora Karol G": [
-    {
-      "audio_id": "632258878803728",
-      "title": "Shake That Thang",
-      "display_artist": "Jumbo"
-    }
-  ],
+  "musica: Bronceador Maluma": [],
+  "musica: Scandic Quevedo": [],
   "tendencia": [
     {
-      "audio_id": "1260124094163995",
-      "title": "Viernes 13",
-      "display_artist": "Marcos Menchaca"
+      "audio_id": "690549269289148",
+      "title": "Grand Theft Auto: San Andreas (Official Theme Song)",
+      "display_artist": "Michael Hunter"
     },
     {
-      "audio_id": "2553186895192637",
-      "title": "What's Up - Deep house",
-      "display_artist": "HARDMAX"
+      "audio_id": "1350757230173277",
+      "title": "GTA 6 (Grand Theft Auto Six Song)",
+      "display_artist": "AURIX232"
     },
     {
-      "audio_id": "1258821776191042",
-      "title": "Coming Up Roses",
-      "display_artist": "Harry Styles"
-    },
-    {
-      "audio_id": "1668904424802271",
-      "title": "lady killers ii",
-      "display_artist": "no/vox, karaokey"
-    },
-    {
-      "audio_id": "1620971306430249",
+      "audio_id": "1866567821133174",
       "title": "Flower In A Hurricane (feat. Tame Impala, SZA, King Gizzard & the Lizard Wizard) [From GTAVI: Original Score]",
-      "display_artist": "Justice, Tame Impala, SZA, King Gizzard & the Lizard Wizard"
+      "display_artist": "Justice, Tame Impala, SZA, Grand Theft Auto VI"
+    },
+    {
+      "audio_id": "1382788023218400",
+      "title": "NON MI INNAMORERÓ (Brazilian Remix)",
+      "display_artist": "Pucho, Gordinho Bolado, Mia, Cristy"
+    },
+    {
+      "audio_id": "1855443605818628",
+      "title": "Suzuki (from GTAVI: The Album)",
+      "display_artist": "Fuerza Regida, Grand Theft Auto VI"
     }
   ]
 }
