@@ -1,0 +1,25 @@
+{
+  "imagen": "fotos_ia/2026-11-25_colores-infinitos_persona.jpg",
+  "salida": "2026-11-25_reel",
+  "clips": [
+    {
+      "prompt": "Dreamy cinematic fantasy commercial. Slow magical push-in across the wooden desk as the row of twelve colorful infinite pencils begins to glow softly, each one releasing tiny sparkles in its own color like magic dust. As she draws, the pink flower on the paper comes alive with shimmering pink light, glowing petals and glitter swirl upward from the page, soft pastel neon bokeh and floating fairy lights fill the warm sunlit room, dreamlike enchanted atmosphere, smooth floating camera, shallow depth of field, realistic hands, the product keeps exactly the same design.",
+      "duracion": 10,
+      "request_id": "01a20aef-4019-7689-8fc7-e71f6b1549b7",
+      "imagen": "fotos_ia/2026-11-25_colores-infinitos_persona.jpg"
+    },
+    {
+      "prompt": "Enchanted night-dream fantasy reel. Graceful cinematic orbit over the desk as the room dims into a starry violet and turquoise neon glow. The colorful infinite pencils gently lift a few centimeters and float in a perfect row, glowing like a rainbow, trailing ribbons of colored light and stardust. She picks the pink pencil from the air with a delighted smile and draws, sparkling flower petals bloom out of the notebook and drift around her, magical cozy aesthetic for young creatives, sharp focus on the pencils, natural motion, the product keeps exactly the same design.",
+      "duracion": 10,
+      "request_id": "01a20aef-414f-7253-9872-0b27bc87a941",
+      "imagen": "fotos_ia/2026-11-25_colores-infinitos_persona.jpg"
+    }
+  ],
+  "textos": {
+    "gancho": "Nunca se acaban",
+    "precio": "Set x12 Colores Infinitos $18",
+    "cierre": "Envíos a todo Ecuador",
+    "whatsapp": "Pide por WhatsApp 098 325 1505",
+    "precio_y": 0.72
+  }
+}
