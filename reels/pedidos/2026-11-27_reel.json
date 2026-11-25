@@ -1,0 +1,23 @@
+{
+  "imagen": "fotos_ia/2026-11-27_abalorio-cafetera_persona.jpg",
+  "salida": "2026-11-27_reel",
+  "clips": [
+    {
+      "prompt": "Realistic aspirational lifestyle commercial, golden hour in a trendy Quito coffee shop. Smooth handheld dolly-in toward her wrist as she lifts the creamy latte mug, laughs with friends off-camera and proudly turns her wrist so the silver moka-pot charm swings and catches warm sunlight with a crisp sparkle. Cozy cream knit sweater, twinkling string lights and soft bokeh behind, natural skin texture, shallow depth of field, confident stylish young woman vibe, sharp focus on the silver bracelet and coffee-maker charm, the product keeps exactly the same design.",
+      "duracion": 10,
+      "imagen": "fotos_ia/2026-11-27_abalorio-cafetera_persona.jpg"
+    },
+    {
+      "prompt": "Realistic night-out with friends social media ad. Cinematic slow orbit around her hand as she sets the mug down and raises her wrist next to her friends' hands clinking cups in a festive warm-lit cafe at night, Christmas lights and pine garlands glowing in the background. The silver snake-chain bracelet with the moka-pot charm dangles and glints, she smiles proudly showing it off, natural motion, true-to-life scale, premium jewelry commercial lighting, the product keeps exactly the same design.",
+      "duracion": 10,
+      "imagen": "fotos_ia/2026-11-27_abalorio-cafetera_persona.jpg"
+    }
+  ],
+  "textos": {
+    "gancho": "Para las cafeteras de verdad",
+    "precio": "Charm Plata 925 Cafetera $10",
+    "cierre": "Envíos a todo Ecuador",
+    "whatsapp": "Pide por WhatsApp 098 325 1505",
+    "precio_y": 0.8
+  }
+}
