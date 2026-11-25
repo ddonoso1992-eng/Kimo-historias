@@ -1,5 +1,5 @@
 {
-  "cuando": "2026-11-24T00:33:37+00:00",
+  "cuando": "2026-11-25T06:15:02+00:00",
   "cuenta": {
     "id": "17841467127423464",
     "media_count": 237,
@@ -37,40 +37,40 @@
       }
     ]
   },
-  "musica: All I Want for Christmas Is You Mariah Carey": [
+  "musica: BbY WOW Karol G": [
     {
-      "audio_id": "1872656819429080",
-      "title": "Jingle Bells",
-      "display_artist": "Brent Bourgeois"
+      "audio_id": "1256638451637432",
+      "title": "Beautiful Life",
+      "display_artist": "CALIDAD"
     },
     {
-      "audio_id": "193842924859531",
-      "title": "Holiday Bells",
-      "display_artist": "Scott Dugdale"
+      "audio_id": "296396337516448",
+      "title": "Quiero Quiero",
+      "display_artist": "Kolektivo"
     },
     {
-      "audio_id": "646691936902863",
-      "title": "What Christmas Means",
-      "display_artist": "Vanessa Campagna"
+      "audio_id": "645551997925278",
+      "title": "Toda La Vida (Instrumental)",
+      "display_artist": "Sara Jaramillo"
     },
     {
-      "audio_id": "322565551554019",
-      "title": "Deck The Halls (Jazz)",
-      "display_artist": "Global Genius"
+      "audio_id": "1586769505565154",
+      "title": "Latina",
+      "display_artist": "Tony Dark Eyes"
     },
     {
-      "audio_id": "1097808322023192",
-      "title": "We Wish You A Merry Christmas (Bass Boosted)",
-      "display_artist": "Giulio Cercato"
+      "audio_id": "608334931793444",
+      "title": "Rose Petal Love (Instrumental)",
+      "display_artist": "Shuba"
     }
   ],
-  "musica: Navidad en Cada Esquina Camilo": [],
-  "musica: Quimera Maria Becerra": [],
+  "musica: Ahi Karol G Drake": [],
+  "musica: Koko Omar Courtz": [],
   "tendencia": [
     {
-      "audio_id": "690549269289148",
-      "title": "Grand Theft Auto: San Andreas (Official Theme Song)",
-      "display_artist": "Michael Hunter"
+      "audio_id": "1382788023218400",
+      "title": "NON MI INNAMORERÓ (Brazilian Remix)",
+      "display_artist": "Pucho, Gordinho Bolado, Mia, Cristy"
     },
     {
       "audio_id": "1350757230173277",
@@ -78,19 +78,19 @@
       "display_artist": "AURIX232"
     },
     {
-      "audio_id": "1866567821133174",
-      "title": "Flower In A Hurricane (feat. Tame Impala, SZA, King Gizzard & the Lizard Wizard) [From GTAVI: Original Score]",
-      "display_artist": "Justice, Tame Impala, SZA, Grand Theft Auto VI"
+      "audio_id": "690549269289148",
+      "title": "Grand Theft Auto: San Andreas (Official Theme Song)",
+      "display_artist": "Michael Hunter"
     },
     {
-      "audio_id": "1382788023218400",
-      "title": "NON MI INNAMORERÓ (Brazilian Remix)",
-      "display_artist": "Pucho, Gordinho Bolado, Mia, Cristy"
+      "audio_id": "2330655201002925",
+      "title": "November Magic",
+      "display_artist": "Peaceful Reveries"
     },
     {
-      "audio_id": "1855443605818628",
-      "title": "Suzuki (from GTAVI: The Album)",
-      "display_artist": "Fuerza Regida, Grand Theft Auto VI"
+      "audio_id": "348382716102226",
+      "title": "Es Válido",
+      "display_artist": "Orquesta Calibre"
     }
   ]
 }
