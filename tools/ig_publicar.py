@@ -33,6 +33,8 @@ import urllib.request
 IG_ID = "17841467127423464"  # @kimo.ecu
 API = "https://graph.facebook.com/v25.0"
 REPO = "ddonoso1992-eng/Kimo-historias"
+# GitHub Pages (hasta 1 GB, sirve video/mp4): no tiene el tope de 50 MB de jsDelivr.
+PAGES = "https://ddonoso1992-eng.github.io/Kimo-historias"
 RAIZ = pathlib.Path(__file__).resolve().parent.parent
 COLA = RAIZ / "programados"
 MAX_ATRASO = dt.timedelta(hours=3)  # si GitHub se atrasa más que esto, no publica a deshora
@@ -101,7 +103,8 @@ def urls_publicas(archivo, sha):
     if not (RAIZ / archivo).is_file():
         raise ErrorMeta(f"No existe en el repo: {archivo}")
     # raw.githubusercontent sirve los mp4 como octet-stream; jsDelivr con el commit los sirve bien.
-    urls = [f"https://cdn.jsdelivr.net/gh/{REPO}@{sha}/{archivo}"]
+    urls = [f"{PAGES}/{urllib.parse.quote(archivo)}",
+            f"https://cdn.jsdelivr.net/gh/{REPO}@{sha}/{archivo}"]
     # jsDelivr puede dar 403 (el repo pasa su límite de 50 MB): las imágenes tienen respaldo en raw.
     if not archivo.lower().endswith(VIDEO):
         urls.append(f"https://raw.githubusercontent.com/{REPO}/{sha}/{archivo}")
