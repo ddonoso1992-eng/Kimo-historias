@@ -22,7 +22,7 @@ import shutil
 
 RAIZ = pathlib.Path(__file__).resolve().parent.parent
 TAG = "respaldo-videos"
-DIAS = 7
+DIAS = 3
 LIMITE_MB = 45  # aviso antes de llegar a los 50 MB de jsDelivr
 VIDEO = (".mp4", ".mov")
 QUITO = dt.timezone(dt.timedelta(hours=-5))
