@@ -6,5 +6,6 @@
   "audio_id": "2385329925545043",
   "volumen_musica": 25,
   "volumen_video": 0,
-  "procesado": "2026-11-26T00:04:23+00:00"
+  "error": "El archivo no se pudo descargar (cdn.jsdelivr.net: HTTP Error 403: Forbidden)",
+  "procesado": "2026-11-26T00:05:00+00:00"
 }
